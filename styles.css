@@ -1,4 +1,7 @@
-*{
+.h1 {
+  font-family: "Chakra Petch", sans-serif;
+}
+.container {
   font-family: "Chakra Petch", sans-serif;
 }
 .hidden {
