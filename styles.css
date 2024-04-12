@@ -1,35 +1,35 @@
 
-  .container {
-    max-width: 800px;
-    margin: 50px auto;
-    text-align: center;
-  }
-  h1 {
-    font-size: 36px;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  .button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    font-size: 18px;
-  }
-  .button:hover {
-    background-color: #45a049;
-  }
-  .head {
-    background: rgb(4,1,64);
-    background: linear-gradient(90deg, rgba(4,1,64,1) 0%, rgba(0,0,181,1) 49%);
-  }
-  .body {
-    font-family: "Chakra Petch", sans-serif;
-    margin: 0;
-    padding: 0;
-    background: rgb(4,1,64);
-    background: linear-gradient(90deg, rgba(4,1,64,1) 0%, rgba(0,0,181,1) 49%);
-  }
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+}
+h1 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  font-size: 18px;
+}
+.button:hover {
+  background-color: #45a049;
+}
+.head {
+  background: rgb(4,1,64);
+  background: linear-gradient(90deg, rgba(4,1,64,1) 0%, rgba(0,0,181,1) 49%);
+}
+.body {
+  font-family: "Chakra Petch", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: rgb(4,1,64);
+  background: linear-gradient(90deg, rgba(4,1,64,1) 0%, rgba(0,0,181,1) 49%);
+}
