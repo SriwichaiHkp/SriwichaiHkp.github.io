@@ -24,13 +24,7 @@
 
 <script>
   function showForm() {
-    var form = document.getElementById('withdrawForm');
-    form.style.display = 'block'; // แสดงฟอร์ม
-}
-
-function submitForm(event) {
-    event.preventDefault(); // ป้องกันการโหลดหน้าใหม่หลังจากส่งฟอร์ม
-    var withdrawalCode = document.getElementById('withdrawalCode').value;
+    var withdrawalCode = window.prompt('กรุณากรอกรหัสเพื่อเบิกเงิน:');
     if (withdrawalCode === '24062550') {
         alert('รหัสถูกต้อง! คุณสามารถเบิกเงินได้');
         // ทำการเปลี่ยนหน้าไปยัง URL ที่ต้องการ
@@ -38,8 +32,6 @@ function submitForm(event) {
     } else {
         alert('รหัสไม่ถูกต้อง! กรุณาลองอีกครั้ง');
     }
-    document.getElementById('withdrawForm').reset(); // รีเซ็ตค่าในฟอร์ม
-    document.getElementById('withdrawForm').style.display = 'none'; // ซ่อนฟอร์ม
 }
 </script>
 </body>
