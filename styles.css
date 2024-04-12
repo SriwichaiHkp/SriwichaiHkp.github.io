@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-image: linear-gradient(to left bottom, #032e6e, #07337b, #0c3988, #133e96, #1a44a3);
   }
   .container {
     max-width: 800px;
