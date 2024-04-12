@@ -5,7 +5,8 @@ body {
     font-family: "Chakra Petch", sans-serif;
     margin: 0;
     padding: 0;
-    background-image: linear-gradient(to left bottom, #032e6e, #07337b, #0c3988, #133e96, #1a44a3);
+    background: rgb(4,1,64);
+    background: linear-gradient(90deg, rgba(4,1,64,1) 0%, rgba(0,0,181,1) 49%);
   }
   .container {
     max-width: 800px;
