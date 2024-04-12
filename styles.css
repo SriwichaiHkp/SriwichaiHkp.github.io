@@ -12,7 +12,7 @@ h1 {
 .button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #4CAF50;
+  background-color: #00008B;
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -20,7 +20,7 @@ h1 {
   font-size: 18px;
 }
 .button:hover {
-  background-color: #45a049;
+  background-color: #800000;
 }
 .head {
   background: rgb(4,1,64);
