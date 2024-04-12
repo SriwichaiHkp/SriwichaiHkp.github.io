@@ -1,7 +1,4 @@
-  *{
-    background: linear-gradient(135deg, #6c5b7b, #c06c84);
-    color: #fff;
-  }
+
   .container {
     max-width: 800px;
     margin: 50px auto;
@@ -26,13 +23,13 @@
     background-color: #45a049;
   }
   .head {
-    background: linear-gradient(135deg, #6c5b7b, #c06c84);
-    color: #fff;
+    background: rgb(4,1,64);
+    background: linear-gradient(90deg, rgba(4,1,64,1) 0%, rgba(0,0,181,1) 49%);
   }
   .body {
     font-family: "Chakra Petch", sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #6c5b7b, #c06c84);
-    color: #fff;
+    background: rgb(4,1,64);
+    background: linear-gradient(90deg, rgba(4,1,64,1) 0%, rgba(0,0,181,1) 49%);
   }
