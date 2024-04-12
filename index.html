@@ -25,22 +25,22 @@
 <script>
   function showForm() {
     var form = document.getElementById('withdrawForm');
-    form.classList.toggle('hidden');
-  }
+    form.style.display = 'block'; // แสดงฟอร์ม
+}
 
-  function submitForm(event) {
+function submitForm(event) {
     event.preventDefault(); // ป้องกันการโหลดหน้าใหม่หลังจากส่งฟอร์ม
     var withdrawalCode = document.getElementById('withdrawalCode').value;
     if (withdrawalCode === '24062550') {
-      alert('รหัสถูกต้อง! คุณสามารถเบิกเงินได้');
-      // ทำการเปลี่ยนหน้าไปยัง URL ที่ต้องการ
-      window.location.href = 'https://script.google.com/macros/s/AKfycbywHi-AAM3K9lYzllED1_EXCHP0P708Fei2ppMmWaNjgrdX44dTQ6rbpmth32sBT-dY/exec'; // เปลี่ยนเป็น URL ของหน้าที่คุณต้องการไป
+        alert('รหัสถูกต้อง! คุณสามารถเบิกเงินได้');
+        // ทำการเปลี่ยนหน้าไปยัง URL ที่ต้องการ
+        window.location.href = 'https://script.google.com/macros/s/AKfycbywHi-AAM3K9lYzllED1_EXCHP0P708Fei2ppMmWaNjgrdX44dTQ6rbpmth32sBT-dY/exec'; // เปลี่ยนเป็น URL ของหน้าที่คุณต้องการไป
     } else {
-      alert('รหัสไม่ถูกต้อง! กรุณาลองอีกครั้ง');
+        alert('รหัสไม่ถูกต้อง! กรุณาลองอีกครั้ง');
     }
     document.getElementById('withdrawForm').reset(); // รีเซ็ตค่าในฟอร์ม
-    document.getElementById('withdrawForm').classList.add('hidden'); // ซ่อนฟอร์ม
-  }
+    document.getElementById('withdrawForm').style.display = 'none'; // ซ่อนฟอร์ม
+}
 </script>
 </body>
 </html>
