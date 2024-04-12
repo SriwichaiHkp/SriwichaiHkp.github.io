@@ -9,13 +9,37 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="logo.png">
-
 </head>
 <body>
 <div class="container">
   <h1>Sriwichai</h1>
   <a href="https://script.google.com/macros/s/AKfycbxiqEdBTD0EeNAt19WexYWLcR0FRWHlTkDbrz3UbUPdeDWBBWJzEs2juHWJrBNzoWARag/exec" class="button">ข้อมูลส่วนตัว</a>
-  <a href="https://script.google.com/macros/s/AKfycbywHi-AAM3K9lYzllED1_EXCHP0P708Fei2ppMmWaNjgrdX44dTQ6rbpmth32sBT-dY/exec" class="button">เบิกเงิน</a>
+  <button onclick="showForm()" class="button">เบิกเงิน</button>
+  <form id="withdrawForm" class="hidden" onsubmit="submitForm(event)">
+    <label for="withdrawalCode">กรอกรหัส:</label>
+    <input type="text" id="withdrawalCode" name="withdrawalCode" required>
+    <button type="submit" class="button">ยืนยัน</button>
+  </form>
 </div>
+
+<script>
+  function showForm() {
+    var form = document.getElementById('withdrawForm');
+    form.classList.toggle('hidden');
+  }
+
+  function submitForm(event) {
+    event.preventDefault(); // ป้องกันการโหลดหน้าใหม่หลังจากส่งฟอร์ม
+    var withdrawalCode = document.getElementById('withdrawalCode').value;
+    if (withdrawalCode === '24062550') {
+      alert('รหัสถูกต้อง! คุณสามารถเบิกเงินได้');
+      // ส่งข้อมูลไปยัง Google Apps Script หรือส่วน backend ที่เกี่ยวข้อง
+    } else {
+      alert('รหัสไม่ถูกต้อง! กรุณาลองอีกครั้ง');
+    }
+    document.getElementById('withdrawForm').reset(); // รีเซ็ตค่าในฟอร์ม
+    document.getElementById('withdrawForm').classList.add('hidden'); // ซ่อนฟอร์ม
+  }
+</script>
 </body>
 </html>

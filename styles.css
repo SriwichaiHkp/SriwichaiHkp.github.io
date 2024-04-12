@@ -33,3 +33,38 @@ h1 {
   background: rgb(4,1,64);
   background: linear-gradient(90deg, rgba(4,1,64,1) 0%, rgba(0,0,181,1) 49%);
 }
+.hidden {
+  display: none;
+}
+
+form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form label, form input {
+  margin-bottom: 10px;
+}
+
+form input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+}
+
+form button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button[type="submit"]:hover {
+  background-color: #45a049;
+}
