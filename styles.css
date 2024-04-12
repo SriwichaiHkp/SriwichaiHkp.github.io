@@ -6,8 +6,11 @@
 
 h1 {
   font-size: 36px;
-  color: #fff; /* เปลี่ยนสีข้อความเป็นสีขาว */
+  color: #00f; /* เปลี่ยนสีข้อความใน h1 เป็นสีฟ้า */
   margin-bottom: 20px;
+}
+#withdrawForm {
+  display: none; /* ซ่อนฟอร์มเมื่อโหลดเว็บ */
 }
 
 .button {
