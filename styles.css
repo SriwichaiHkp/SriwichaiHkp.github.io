@@ -111,4 +111,5 @@ button:hover {
     color: #fff; /* สีข้อความขาว */
     text-align: center;
     padding: 20px;
+    font-size: smaller;
 }
