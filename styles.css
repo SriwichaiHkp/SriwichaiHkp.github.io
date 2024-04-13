@@ -4,7 +4,7 @@ body {
     font-family: 'Kanit', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f2f5; /* สีพื้นหลังเทาอ่อน */
+    background: linear-gradient(to right, rgb(0, 82, 212), rgb(67, 100, 247), rgb(111, 177, 252));
 }
 
 .container {
