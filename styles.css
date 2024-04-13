@@ -114,14 +114,14 @@ button:hover {
     color: #fff; /* สีข้อความขาว */
     text-align: left;
     padding: 10px; /* ลดการเว้นระยะขอบ */
-    font-size: 2px; /* ลดขนาดตัวหนังสือเป็น x-small */
+    font-size: x-small; /* ลดขนาดตัวหนังสือเป็น x-small */
     margin-top: auto; /* จัดให้อยู่ด้านล่างสุด */
 }
 .p3{
-    
+    font-size: ;
 }
 @media screen and (max-width: 600px) {
     .footer {
-        font-size: 14px; /* ปรับขนาดตัวหนังสือเล็กลง */
+        font-size: 8px; /* ปรับขนาดตัวหนังสือเล็กลง */
     }
 }
