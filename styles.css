@@ -156,3 +156,6 @@ button:hover {
     width: 100%; /* กำหนดความกว้างให้เต็มขอบ */
     text-align: center;
 }
+.link-dangerlink-offset-2link-underline-opacity-25link-underline-opacity-100-hover {
+    color:#fff;
+}
