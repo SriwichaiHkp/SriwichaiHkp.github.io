@@ -9,15 +9,21 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="logo/logo.png">
     <style>
-        @keyframes slideImages {
-            0% { opacity: 0; }
-            20% { opacity: 1; }
-            80% { opacity: 1; }
-            100% { opacity: 0; }
+        .credit-container {
+            position: relative;
+            width: 100px;
+            height: auto;
+            margin-right: 10px;
+            animation: fadeImage 5s infinite;
         }
 
-        .animate-credit {
-            animation: slideImages 5s infinite;
+        @keyframes fadeImage {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.4;
+            }
         }
     </style>
 </head>
@@ -42,7 +48,9 @@
     </div>
     <div class="footer" style="display: flex; align-items: center;">
         <!-- รูปเครดิต -->
-        <img id="creditImage" src="logo/13/credit1.png" alt="Rathee Love Kamonphob" style="width: 100px; height: auto; margin-right: 10px;" class="animate-credit">
+        <div class="credit-container">
+            <img id="creditImage" src="logo/13/credit1.png" alt="Rathee Love Kamonphob">
+        </div>
         <div>
             <p>© 2024 สงวนสิทธิ์ Tischa Production.</p>
             <p>Website made by</p>
@@ -115,18 +123,15 @@
         "logo/13/credit8.png",
         "logo/13/credit9.png",
     ];
+    var currentIndex = 0;
+    var creditImage = document.getElementById("creditImage");
 
     function changeCreditImage() {
-        var creditImage = document.getElementById("creditImage");
-        var randomIndex = Math.floor(Math.random() * creditImages.length);
-        creditImage.src = creditImages[randomIndex];
-        creditImage.classList.add("animate-credit");
-        setTimeout(function() {
-            creditImage.classList.remove("animate-credit");
-        }, 5000);
+        currentIndex = (currentIndex + 1) % creditImages.length;
+        creditImage.src = creditImages[currentIndex];
     }
 
-    setInterval(changeCreditImage, 6000);
+    setInterval(changeCreditImage, 5000);
 </script>
 </body>
 </html>
