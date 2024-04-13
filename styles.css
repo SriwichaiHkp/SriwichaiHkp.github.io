@@ -121,11 +121,12 @@ button:hover {
     left: 0; /* จัดไปที่ขอบซ้ายของหน้าเว็บ */
     line-height: 1.5; /* กำหนดความสูงของบรรทัด */
     margin: 0; /* ไม่มีการเว้นระยะห่าง */
+    font-size: calc(1vw + 10px); /* ให้ขนาดฟอนต์ขึ้นอยู่กับความกว้างของหน้าจอ */
 }
 .p3{
     font-size: ;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 300px) {
     .footer {
         font-size: 8px; /* ปรับขนาดตัวหนังสือเล็กลง */
     }
