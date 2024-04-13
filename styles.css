@@ -110,15 +110,12 @@ button:hover {
     background-color: #0056b3; /* สีเข้มขึ้นเมื่อโฮเวอร์ */
 }
 .footer {
-    border: blue;
+    border: 1px solid blue; /* เปลี่ยนเป็นกรอบมุมมนสีน้ำเงิน */
     color: #fff; /* สีข้อความขาว */
     text-align: center;
-    padding: 20px;
-    font-size: 8px;
+    padding: 10px; /* ลดการเว้นระยะขอบ */
+    font-size: x-small; /* ลดขนาดตัวหนังสือเป็น x-small */
     margin-top: auto; /* จัดให้อยู่ด้านล่างสุด */
-}
-.p2{
-    font-size: xx-small;
 }
 @media screen and (max-width: 600px) {
     .footer {
