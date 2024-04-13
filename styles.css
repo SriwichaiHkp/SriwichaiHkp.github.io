@@ -109,6 +109,7 @@ button:hover {
     background-color: #0056b3; /* สีเข้มขึ้นเมื่อโฮเวอร์ */
 }
 .footer {
+    border: #fff;
     color: #fff; /* สีข้อความขาว */
     text-align: left;
     padding: 10px; /* ลดการเว้นระยะขอบ */
