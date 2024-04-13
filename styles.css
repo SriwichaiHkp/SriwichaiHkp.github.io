@@ -112,7 +112,9 @@ button:hover {
     border: #fff;
     color: #fff; /* สีข้อความขาว */
     text-align: left;
-    padding: 10px; /* ลดการเว้นระยะขอบ */
+    border-top: 1px solid #fff; /* เพิ่มเส้นขอบด้านบน */
+    padding-top: 10px; /* เพิ่มระยะห่างด้านบน */
+    margin-top: 20px; /* เพิ่มระยะห่างด้านบน */
     font-size: 8px; /* ลดขนาดตัวหนังสือเป็น x-small */
     position: absolute; /* ติดตั้งเป็นตำแหน่งแบบ absolute */
     width: 100%; /* กว้างเต็มขอบ */
