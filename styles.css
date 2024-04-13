@@ -159,3 +159,14 @@ button:hover {
 .link-danger {
     color: #fefefe;
 }
+@keyframes slideImages {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.animate-credit {
+    animation: slideImages 5s infinite;
+}
+
