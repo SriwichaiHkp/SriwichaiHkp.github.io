@@ -162,7 +162,6 @@ button:hover {
 @keyframes slideImages {
     0% { opacity: 0.2; } /* รูปมืด */
     50% { opacity: 1; } /* รูปสว่าง */
-    100% { opacity: 0.2; } /* รูปมืด */
 }
 
 .animate-credit {
