@@ -22,9 +22,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-.btn-container {
-    display: flex;
-}
+
 
 .btn {
     display: inline-block;
