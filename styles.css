@@ -138,8 +138,20 @@ button:hover {
     background-color: #fefefe;
     border: 1px solid #888;
     border-radius: 10px; /* กำหนดรูปทรงของ Modal */
-    text-align: center; /* จัดข้อความตรงกลาง */
   }
-.p10{
-    text-align: center;
+.p10 {
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+    position: absolute; /* ตั้งให้อยู่ใต้ Modal */
+    bottom: 10px; /* จัดตำแหน่งด้านล่างของ Modal 10px */
+    left: 50%; /* จัดตำแหน่งไปทางซ้ายของ Modal ที่ 50% */
+    transform: translateX(-50%); /* ขยับข้อความไปทางซ้าย 50% */
+    margin: 0; /* ลบ margin */
+}
+.boss {
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+    position: absolute; /* ตั้งให้อยู่ใต้ Modal */
+    bottom: 10px; /* จัดตำแหน่งด้านล่างของ Modal 10px */
+    left: 50%; /* จัดตำแหน่งไปทางซ้ายของ Modal ที่ 50% */
+    transform: translateX(-50%); /* ขยับข้อความไปทางซ้าย 50% */
+    margin: 0; /* ลบ margin */
 }
