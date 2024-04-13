@@ -135,7 +135,7 @@ button:hover {
     top: 50%;
     transform: translate(-50%, -50%);
     height: 30%;
-    width: 400px; /* กำหนดความกว้าง */
+    width: 450px; /* กำหนดความกว้าง */
     max-width: 80%; /* กำหนดความกว้างสูงสุด */
     padding: 20px;
     background-color: #fefefe;
@@ -152,10 +152,13 @@ button:hover {
     line-height: 0.5;
 }
 .boss {
-    position: absolute; /* ตั้งให้อยู่ในตำแหน่งแบบแน่นอน */
-    top: 0; /* ขยับข้อความไปที่ด้านบนของพื้นที่ */
-    width: 100%; /* กำหนดความกว้างให้เต็มขอบ */
-    text-align: center;
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+    position: absolute ; /* ตั้งให้อยู่ใต้ Modal */
+    top: 20px; /* จัดตำแหน่งด้านล่างของ Modal 10px */
+    left: 50%; /* จัดตำแหน่งไปทางซ้ายของ Modal ที่ 50% */
+    transform: translateX(-50%); /* ขยับข้อความไปทางซ้าย 50% */
+    margin: 0; /* ลบ margin */
+    line-height: 0.5;
 }
 .link-danger {
     color: #fefefe;
