@@ -66,16 +66,15 @@
                 alert("รหัสผ่านไม่ถูกต้อง");
             }
         }
-        // เมื่อโหลดเสร็จแล้ว
         document.addEventListener('DOMContentLoaded', function() {
-        var modal = document.getElementById('welcomeModal');
-        var closeBtn = document.getElementsByClassName('close')[0];
+    var modal = document.getElementById('welcomeModal');
+    var closeBtn = document.getElementsByClassName('close')[0];
 
     // แสดง Modal เมื่อโหลดเว็บ
-        modal.style.display = 'block';
+    modal.style.display = 'block';
 
     // ปิด Modal เมื่อคลิกที่ปุ่มปิดหรือพื้นหลัง
-        closeBtn.onclick = function() {
+    closeBtn.onclick = function() {
         modal.style.display = 'none';
     }
 
@@ -85,7 +84,6 @@
         }
     }
 });
-
 
     </script>
 </body>
