@@ -40,7 +40,6 @@ h1 {
     transition: all 0.3s ease;
     width: 200px; /* กำหนดความกว้าง */
     box-sizing: border-box; /* เพื่อให้ padding และ border ไม่นับเข้าไปใน width */
-    color: maroon;
 }
 
 .btn:hover {
