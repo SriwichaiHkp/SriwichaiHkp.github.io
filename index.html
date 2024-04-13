@@ -70,10 +70,14 @@
             }
         }
         document.addEventListener('DOMContentLoaded', function() {
-    var modal = document.getElementById('welcomeModal');
+    showModal();
+});
 
-    // แสดง Modal เมื่อโหลดเว็บ
+function showModal() {
+    var modal = document.getElementById('welcomeModal');
     modal.style.display = 'block';
+}
+
 
     // ปิด Modal เมื่อคลิกที่พื้นหลัง
     modal.addEventListener('click', function(event) {
@@ -81,13 +85,6 @@
             hideModal();
         }
     });
-
-    // ปิด Modal โดยซ่อนแบบฟังก์ชัน
-    function hideModal() {
-        modal.style.display = 'none';
-    }
-});
-
 
     // ปิด Modal โดยซ่อนแบบฟังก์ชัน
     function hideModal() {
