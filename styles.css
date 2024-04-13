@@ -110,7 +110,7 @@ button:hover {
 .footer {
     border: blue;
     color: #fff; /* สีข้อความขาว */
-    text-align: left;
+    text-align: center;
     padding: 20px;
     font-size: 8px;
     margin-top: auto; /* จัดให้อยู่ด้านล่างสุด */
