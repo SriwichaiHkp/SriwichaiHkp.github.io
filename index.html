@@ -106,14 +106,15 @@ var creditImages = [
 ];
 
 
+var currentIndex = 0; // เพิ่มตัวแปร currentIndex เพื่อเก็บค่า index ของรูปภาพเครดิตปัจจุบัน
+
 function changeCreditImage() {
     var creditImage = document.getElementById("creditImage");
     currentIndex = (currentIndex + 1) % creditImages.length;
-    creditImage.src = "path/to/creditImages/" + creditImages[currentIndex];
+    creditImage.src = creditImages[currentIndex]; // ไม่ต้องเพิ่ม "path/to/creditImages/" ในการกำหนด src แล้ว เพราะที่อยู่ได้ระบุไว้ในตัวแปร creditImages แล้ว
 }
 
 setInterval(changeCreditImage, 3000);
-
 
     </script>
 </body>
