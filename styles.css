@@ -128,56 +128,52 @@ button:hover {
 }
 /* สไตล์ของ Modal */
 .modal {
-    display: none;
+    display: none; /* ซ่อนตั้งแต่แรก */
     position: fixed;
     z-index: 1;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 80vw; /* กำหนดความกว้างเป็น 80% ของ viewport width */
-    max-width: 300px; /* สำหรับอุปกรณ์ที่มีขนาดเล็ก ให้มีความกว้างสูงสุดที่ 300px */
+    height: auto;
+    width: 300px; /* กำหนดความกว้าง */
     padding: 20px;
     background-color: #fefefe;
     border: 1px solid #888;
-    border-radius: 10px;
+    border-radius: 10px; /* กำหนดรูปทรงของ Modal */
     font-size: 13px;
-}
-
+  }
 .p10 {
-    text-align: center;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 0;
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+    position: absolute; /* ตั้งให้อยู่ใต้ Modal */
+    bottom: 10px; /* จัดตำแหน่งด้านล่างของ Modal 10px */
+    left: 50%; /* จัดตำแหน่งไปทางซ้ายของ Modal ที่ 50% */
+    transform: translateX(-50%); /* ขยับข้อความไปทางซ้าย 50% */
+    margin: 0; /* ลบ margin */
     line-height: 0.5;
 }
-
 .boss {
-    text-align: center;
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 0;
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+    position: absolute ; /* ตั้งให้อยู่ใต้ Modal */
+    top: 20px; /* จัดตำแหน่งด้านล่างของ Modal 10px */
+    left: 50%; /* จัดตำแหน่งไปทางซ้ายของ Modal ที่ 50% */
+    transform: translateX(-50%); /* ขยับข้อความไปทางซ้าย 50% */
+    margin: 0; /* ลบ margin */
     line-height: 0.5;
 }
-
 .link-danger {
     color: #fefefe;
 }
-
 @keyframes fadeOutIn {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
+    0% { opacity: 1; } /* รูปสว่าง */
+    50% { opacity: 0; } /* รูปมืด */
+    100% { opacity: 1; } /* รูปสว่าง */
 }
 
 .animate-credit {
     animation: fadeOutIn 5s infinite;
 }
-
 .credit-container img {
-    width: 100px;
-    height: auto;
+    width: 100px; /* ความกว้างของรูปภาพ */
+    height: auto; /* ความสูงของรูปภาพจะปรับตามอัตราส่วน */
 }
+
