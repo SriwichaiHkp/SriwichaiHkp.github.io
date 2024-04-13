@@ -118,3 +118,8 @@ button:hover {
 .p2{
     font-size: xx-small;
 }
+@media screen and (max-width: 600px) {
+    .footer {
+        font-size: 14px; /* ปรับขนาดตัวหนังสือเล็กลง */
+    }
+}
