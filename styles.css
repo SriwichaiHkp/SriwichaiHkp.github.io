@@ -5,7 +5,8 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(to left, rgb(0, 28, 73), rgb(0, 28, 154), rgb(167, 208, 255));
-    
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
@@ -15,6 +16,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-grow: 1;
 }
 
 h1 {
