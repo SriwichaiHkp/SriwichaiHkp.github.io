@@ -149,4 +149,5 @@ button:hover {
 }
 .boss {
     text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+    position: top;
 }
