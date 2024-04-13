@@ -134,13 +134,13 @@ button:hover {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    height: 30%;
-    width: auto; /* กำหนดความกว้าง */
-    max-width: 80%; /* กำหนดความกว้างสูงสุด */
+    height: 15%;
+    width: 300px; /* กำหนดความกว้าง */
     padding: 20px;
     background-color: #fefefe;
     border: 1px solid #888;
     border-radius: 10px; /* กำหนดรูปทรงของ Modal */
+    font-size: small;
   }
 .p10 {
     text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
