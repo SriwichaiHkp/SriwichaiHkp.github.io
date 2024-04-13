@@ -138,6 +138,7 @@ button:hover {
     background-color: #fefefe;
     border: 1px solid #888;
     border-radius: 10px; /* กำหนดรูปทรงของ Modal */
+    text-align: center; /* จัดข้อความตรงกลาง */
   }
 .p10{
     text-align: center;
