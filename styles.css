@@ -135,7 +135,7 @@ button:hover {
     top: 50%;
     transform: translate(-50%, -50%);
     height: 30%;
-    width: 450px; /* กำหนดความกว้าง */
+    width: auto; /* กำหนดความกว้าง */
     max-width: 80%; /* กำหนดความกว้างสูงสุด */
     padding: 20px;
     background-color: #fefefe;
