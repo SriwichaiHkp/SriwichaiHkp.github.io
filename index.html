@@ -30,7 +30,7 @@
     </div>
     <div class="footer" style="display: flex; align-items: center;">
         <!-- รูปเครดิต -->
-        <img src="logo/logo.png" alt="Rathee Love Kamonphob" style="width: 100px; height: auto; margin-right: 10px;">
+        <img id="creditImage" src="logo/logo.png" alt="Rathee Love Kamonphob" style="width: 100px; height: auto; margin-right: 10px;">
         <div>
             <p>© 2024 สงวนสิทธิ์ Tischa Production.</p>
             <p>Website made by</p>
@@ -92,6 +92,16 @@ modal.addEventListener('click', function(event) {
 function hideModal() {
     modal.style.display = 'none';
 }
+var creditImages = ["credit1.png", "credit2.png", "credit3.png", "credit4.png", "credit5.png", "credit6.png", "credit7.png", "credit8.png", "credit9.png"]; // เพิ่มชื่อไฟล์ของรูปภาพเครดิตที่ต้องการแสดงเพิ่มเติม
+
+function changeCreditImage() {
+    var creditImage = document.getElementById("creditImage");
+    currentIndex = (currentIndex + 1) % creditImages.length;
+    creditImage.src = "path/to/creditImages/" + creditImages[currentIndex];
+}
+
+setInterval(changeCreditImage, 60000);
+
 
     </script>
 </body>
