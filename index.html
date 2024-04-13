@@ -78,20 +78,18 @@ function showModal() {
     modal.style.display = 'block';
 }
 
-
-    // ปิด Modal เมื่อคลิกที่พื้นหลัง
-    modal.addEventListener('click', function(event) {
-        if (event.target === modal) {
-            hideModal();
-        }
-    });
-
-    // ปิด Modal โดยซ่อนแบบฟังก์ชัน
-    function hideModal() {
-        modal.style.display = 'none';
+// ปิด Modal เมื่อคลิกที่พื้นหลัง
+var modal = document.getElementById('welcomeModal');
+modal.addEventListener('click', function(event) {
+    if (event.target === modal) {
+        hideModal();
     }
 });
 
+// ปิด Modal โดยซ่อนแบบฟังก์ชัน
+function hideModal() {
+    modal.style.display = 'none';
+}
 
     </script>
 </body>
