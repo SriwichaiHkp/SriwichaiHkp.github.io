@@ -14,6 +14,7 @@
         HKP Sriwichai 
     </h1>
     <div class="container btn-container">
+        <a href="https://forms.gle/4WY4WW3hcrpNBkMR9" class="btn btn-outline-primary">สั่งเสื้อ</a>
         <a href="https://script.google.com/macros/s/AKfycbwRX-2QRp5f5bnVTej8HfhTORmAh3tPWsirHUsZ-bwZW23-XOGiScEuADnd4-C_Ivaj_Q/exec" class="btn btn-outline-primary">ข้อมูลส่วนตัว</a>
         <a class="btn btn-outline-primary" onclick="showPopup()">เบิกเงิน</a>
     </div>
@@ -38,7 +39,15 @@
             <P>มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี</P>
         </div>
     </div>
-    <div id="table-container"></div>
+    <div id="welcomeModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>ข้อความแนะนำการใช้งานเว็บไซต์</h2>
+          <p>ข้อความแนะนำการใช้งานเว็บไซต์ของคุณ</p>
+          <p>สามารถเพิ่มข้อความและรายละเอียดเพิ่มเติมได้ตามต้องการ</p>
+        </div>
+      </div>
+      
     <script>
         function showPopup() {
             document.getElementById("popup").style.display = "block";
@@ -57,11 +66,26 @@
                 alert("รหัสผ่านไม่ถูกต้อง");
             }
         }
-        fetch('https://script.google.com/macros/s/AKfycbzCSgmuYeGloV0ZFKSbjdUhsTnHka0mOybMES7z0AlP-hCaspNO0f0pcLOsCNwsx-U9/exec')
-        .then(response => response.text())
-        .then(data => {
-    document.getElementById('table-container').innerHTML = data;
-  });
+        // เมื่อโหลดเสร็จแล้ว
+        document.addEventListener('DOMContentLoaded', function() {
+        var modal = document.getElementById('welcomeModal');
+        var closeBtn = document.getElementsByClassName('close')[0];
+
+    // แสดง Modal เมื่อโหลดเว็บ
+        modal.style.display = 'block';
+
+    // ปิด Modal เมื่อคลิกที่ปุ่มปิดหรือพื้นหลัง
+        closeBtn.onclick = function() {
+        modal.style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+});
+
 
     </script>
 </body>
