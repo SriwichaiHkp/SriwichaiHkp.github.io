@@ -114,7 +114,7 @@ button:hover {
     color: #fff; /* สีข้อความขาว */
     text-align: left;
     padding: 10px; /* ลดการเว้นระยะขอบ */
-    font-size: 5px; /* ลดขนาดตัวหนังสือเป็น x-small */
+    font-size: 8px; /* ลดขนาดตัวหนังสือเป็น x-small */
     position: absolute; /* ติดตั้งเป็นตำแหน่งแบบ absolute */
     width: 100%; /* กว้างเต็มขอบ */
     bottom: 0; /* จัดไปที่ขอบล่างของหน้าเว็บ */
