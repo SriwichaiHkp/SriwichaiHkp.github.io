@@ -132,7 +132,7 @@ button:hover {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 300px; /* กำหนดความกว้าง */
+    width: 400px; /* กำหนดความกว้าง */
     max-width: 80%; /* กำหนดความกว้างสูงสุด */
     padding: 20px;
     background-color: #fefefe;
