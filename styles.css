@@ -4,7 +4,10 @@ body {
     font-family: 'Kanit', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, rgb(0, 82, 212), rgb(67, 100, 247), rgb(111, 177, 252));
+    background-color: #2234ae;
+    background-image: linear-gradient(315deg, #2234ae 0%, #191714 74%);
+
+    
 }
 
 .container {
