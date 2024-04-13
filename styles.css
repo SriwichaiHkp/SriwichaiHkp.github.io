@@ -112,7 +112,7 @@ button:hover {
     color: #fff; /* สีข้อความขาว */
     text-align: left;
     padding: 20px;
-    font-size: smaller;
+    font-size: 8px;
 }
 .p2{
     font-size: xx-small;
