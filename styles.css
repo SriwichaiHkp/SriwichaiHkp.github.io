@@ -112,7 +112,7 @@ button:hover {
 .footer {
     border: 1px solid blue; /* เปลี่ยนเป็นกรอบมุมมนสีน้ำเงิน */
     color: #fff; /* สีข้อความขาว */
-    text-align: center;
+    text-align: left;
     padding: 10px; /* ลดการเว้นระยะขอบ */
     font-size: x-small; /* ลดขนาดตัวหนังสือเป็น x-small */
     margin-top: auto; /* จัดให้อยู่ด้านล่างสุด */
