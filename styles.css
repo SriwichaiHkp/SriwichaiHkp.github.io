@@ -168,4 +168,8 @@ button:hover {
 .animate-credit {
     animation: fadeOutIn 5s infinite;
 }
+.credit-container img {
+    width: 100px; /* ความกว้างของรูปภาพ */
+    height: auto; /* ความสูงของรูปภาพจะปรับตามอัตราส่วน */
+}
 
