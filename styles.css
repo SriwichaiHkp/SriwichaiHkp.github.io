@@ -159,12 +159,13 @@ button:hover {
 .link-danger {
     color: #fefefe;
 }
-@keyframes slideImages {
-    0% { opacity: 0.2; } /* รูปมืด */
-    50% { opacity: 1; } /* รูปสว่าง */
+@keyframes fadeOutIn {
+    0% { opacity: 1; } /* รูปสว่าง */
+    50% { opacity: 0; } /* รูปมืด */
+    100% { opacity: 1; } /* รูปสว่าง */
 }
 
 .animate-credit {
-    animation: slideImages 5s infinite;
+    animation: fadeOutIn 5s infinite;
 }
 
