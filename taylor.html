@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sriwichai</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <title>TAYLOR</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="logo/logo.png">
+    <link rel="icon" type="image/png" href="logo/13/credit3.png">
     <style>
         .credit-container {
             position: relative;
@@ -29,24 +27,10 @@
 </head>
 <body>
     <h1>
-        HKP Sriwichai 
+        Sriwichai
     </h1>
     <div class="container btn-container">
-        <a href="https://forms.gle/feZkH6Cmj2T75xtUA" class="btn btn-outline-primary">สั่งเสื้อ</a>
-        <a href="https://script.google.com/macros/s/AKfycbwRX-2QRp5f5bnVTej8HfhTORmAh3tPWsirHUsZ-bwZW23-XOGiScEuADnd4-C_Ivaj_Q/exec" class="btn btn-outline-primary">ข้อมูลส่วนตัว</a>
-        <a class="btn btn-outline-primary" onclick="showPopup()">เบิกเงิน</a>
-        <a href="https://forms.gle/JA7MuHf8US2ws3JG7" class="btn btn-outline-primary">แจ้งหลักฐานการโอนเงิน</a>
-        <a href="taylor.html" class="btn btn-outline-primary">เปลี่ยนหน้า</a>
-    </div>
-
-    <!-- Popup สำหรับใส่รหัสผ่าน -->
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <span class="close" onclick="hidePopup()">&times;</span>
-            <h2>กรุณาใส่รหัสผ่าน</h2>
-            <input type="password" id="password">
-            <button onclick="checkPassword()">ยืนยัน</button>
-        </div>
+        <a href="index.html" class="btn btn-outline-primary">กลับหน้าหลัก</a>
     </div>
     <div class="footer" style="display: flex; align-items: center;">
         <!-- รูปเครดิต -->
@@ -60,40 +44,7 @@
             <p>2.นายรัฐธีร์ เฉลิมนิธิวงศ์ นักเรียน </p><a href="https://gifted.kmutt.ac.th/th/home" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">โรงเรียนดรุณสิกขาลัย โครงการห้องเรียน วิศว์-วิทย์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี</a></p>
         </div>
     </div>
-   <!-- Modal -->
-<div id="welcomeModal" class="modal">
-    <div class="modal-content">
-        <h2 class="boss">ขั้นตอนการใช้งาน</h2>
-        <p>1.สั่งเสื้อ</p>
-        <p>2.เช็คข้อมูลว่าไซส์หรือจ่ายค่าเสื้อถูกต้องหรือไม่</p>
-        <p>3.เบิกเงินต้องเป็นเฉพาะหัวหน้าของแต่ละส่วนท่านั้น</p>
-        <p> </p>
-        <p>        </p>
-        <a class="p10">กดพื้นที่สีขาวเพื่อปิดหน้าต่างนี้</a> <!-- ใส่ class p10 เพื่อให้สามารถใช้ CSS ได้ -->
-    </div>
-</div>
-
-
-
-<script>
-    function showPopup() {
-        document.getElementById("popup").style.display = "block";
-    }
-
-    function hidePopup() {
-        document.getElementById("popup").style.display = "none";
-    }
-
-    function checkPassword() {
-        var password = document.getElementById("password").value;
-        // เช็ครหัสผ่าน ในที่นี้จะเป็นตัวอย่างเท่านั้น
-        if (password === "24062550") {
-            window.location.href = "https://script.google.com/macros/s/AKfycbzlZ3LMHwPSualzfm3HAmLCgSHgJQ2jnBF225yP-nUlWo7FwssNG6s9K1i1XTnqLyNS/exec"; // ลิงก์ถัดไป
-        } else {
-            alert("รหัสผ่านไม่ถูกต้อง");
-        }
-    }
-
+    <script>
     document.addEventListener('DOMContentLoaded', function() {
         showModal();
     });
