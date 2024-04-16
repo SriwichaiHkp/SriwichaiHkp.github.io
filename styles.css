@@ -176,4 +176,7 @@ button:hover {
     width: 100px; /* ความกว้างของรูปภาพ */
     height: auto; /* ความสูงของรูปภาพจะปรับตามอัตราส่วน */
 }
-
+.TISCHA {
+    text-align: center;
+    color: #fff;
+}
