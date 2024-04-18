@@ -19,10 +19,10 @@
         <a href="index.html" class="btn btn-outline-primary">กลับหน้าหลัก</a>
     </div>
     <!-- โค้ดเพิ่ม: เพลงในพื้นหลัง -->
-    <audio id="backgroundMusic" autoplay loop>
+    <audio id="backgroundMusic" autoplay loop volume="0.2">
         <source src="logo/music/Y2DL_Taylor_Swift_-_Style_(Taylor's_Version)_[Instrumental].mp3" type="audio/mpeg">
         Your browser does not support the audio element.
-    </audio>
+    </audio>    
     <div class="footer" style="display: flex; align-items: center;">
         <!-- รูปเครดิต -->
         <div class="credit-container">
@@ -36,6 +36,9 @@
         </div>
     </div>
     <script>
+        var audio = document.getElementById("backgroundMusic");
+        audio.volume = 0.2;
+        
         function toggleBackgroundMusic() {
             var backgroundMusic = document.getElementById('backgroundMusic');
             if (backgroundMusic.paused) {
