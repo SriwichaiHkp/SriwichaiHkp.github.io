@@ -7,24 +7,6 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="logo/13/credit3.png">
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <style>
-        .credit-container {
-            position: relative;
-            width: 100px;
-            height: auto;
-            margin-right: 10px;
-            animation: fadeImage 5s infinite;
-        }
-
-        @keyframes fadeImage {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.4;
-            }
-        }
-    </style>
 </head>
 <body>
     <h1>
@@ -36,64 +18,53 @@
     <div class="container btn-container">
         <a href="index.html" class="btn btn-outline-primary">กลับหน้าหลัก</a>
     </div>
+    <!-- โค้ดเพิ่ม: เพลงในพื้นหลัง -->
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="logo/music/Y2DL_Taylor_Swift_-_Style_(Taylor's_Version)_[Instrumental].mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
     <div class="footer" style="display: flex; align-items: center;">
         <!-- รูปเครดิต -->
         <div class="credit-container">
             <img id="creditImage" src="logo/13/credit1.png" alt="Rathee Love Kamonphob">
         </div>
         <div>
-            <p>© 2024 สงวนสิทธิ์ Sriwichai  </p>
+            <p>© 2024 สงวนสิทธิ์ Sriwichai</p>
             <p> All Rights Reserved.Power By </p>
-            <p>1.นายกมลภพ ศรีสัมฤทธิ์ นักเรียน</p><a href="https://www.hunkhapit.ac.th/" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover ">โรงเรียนหันคาพิทยาคม</a></p>
-            <p>2.นายรัฐธีร์ เฉลิมนิธิวงศ์ นักเรียน </p><a href="https://gifted.kmutt.ac.th/th/home" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">โรงเรียนดรุณสิกขาลัย โครงการห้องเรียน วิศว์-วิทย์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี</a></p>
+            <p>1.นายกมลภพ ศรีสัมฤทธิ์ นักเรียน<a href="https://www.hunkhapit.ac.th/" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover ">โรงเรียนหันคาพิทยาคม</a></p>
+            <p>2.นายรัฐธีร์ เฉลิมนิธิวงศ์ นักเรียน <a href="https://gifted.kmutt.ac.th/th/home" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">โรงเรียนดรุณสิกขาลัย โครงการห้องเรียน วิศว์-วิทย์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี</a></p>
         </div>
     </div>
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        showModal();
-    });
-
-    function showModal() {
-        var modal = document.getElementById('welcomeModal');
-        modal.style.display = 'block';
-    }
-
-    // ปิด Modal เมื่อคลิกที่พื้นหลัง
-    var modal = document.getElementById('welcomeModal');
-    modal.addEventListener('click', function(event) {
-        if (event.target === modal) {
-            hideModal();
+        function toggleBackgroundMusic() {
+            var backgroundMusic = document.getElementById('backgroundMusic');
+            if (backgroundMusic.paused) {
+                backgroundMusic.play();
+            } else {
+                backgroundMusic.pause();
+            }
         }
-    });
 
-    // ปิด Modal โดยซ่อนแบบฟังก์ชัน
-    function hideModal() {
-        modal.style.display = 'none';
-    }
+        var creditImages = [
+            "logo/13/credit1.png",
+            "logo/13/credit2.png",
+            "logo/13/credit3.png",
+            "logo/13/credit4.png",
+            "logo/13/credit5.png",
+            "logo/13/credit6.png",
+            "logo/13/credit7.png",
+            "logo/13/credit8.png",
+            "logo/13/credit9.png",
+        ];
+        var currentIndex = 0;
+        var creditImage = document.getElementById("creditImage");
 
-    var creditImages = [
-        "logo/13/credit1.png",
-        "logo/13/credit2.png",
-        "logo/13/credit3.png",
-        "logo/13/credit4.png",
-        "logo/13/credit5.png",
-        "logo/13/credit6.png",
-        "logo/13/credit7.png",
-        "logo/13/credit8.png",
-        "logo/13/credit9.png",
-    ];
-    var currentIndex = 0;
-    var creditImage = document.getElementById("creditImage");
+        function changeCreditImage() {
+            currentIndex = (currentIndex + 1) % creditImages.length;
+            creditImage.src = creditImages[currentIndex];
+        }
 
-    function changeCreditImage() {
-        currentIndex = (currentIndex + 1) % creditImages.length;
-        creditImage.src = creditImages[currentIndex];
-    }
-
-    setInterval(changeCreditImage, 5000);
-
-
-
-</script>
+        setInterval(changeCreditImage, 5000);
+    </script>
 </body>
 </html>
