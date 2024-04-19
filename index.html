@@ -32,7 +32,7 @@
         HKP Sriwichai 
     </h1>
      <!-- โค้ดเพิ่ม: เพลงในพื้นหลัง -->
-     <audio id="backgroundMusic" autoplay loop volume="0.1">
+     <audio id="backgroundMusic" autoplay loop volume="0.5">
         <source src="logo/music/so long london.MP3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
@@ -72,7 +72,7 @@
         <p>1.สั่งเสื้อ</p>
         <p>2.เช็คข้อมูลว่าไซส์หรือจ่ายค่าเสื้อถูกต้องหรือไม่</p>
         <p>3.เบิกเงินต้องเป็นเฉพาะหัวหน้าของแต่ละส่วนท่านั้น</p>
-        <p> </p>
+        <p>มีเพลงอยู่เบื้องหลังกรุณาเบาเสียง</p>
         <p>        </p>
         <a class="p10">กดพื้นที่สีขาวเพื่อปิดหน้าต่างนี้</a> <!-- ใส่ class p10 เพื่อให้สามารถใช้ CSS ได้ -->
     </div>
@@ -82,7 +82,7 @@
 
 <script>
     var audio = document.getElementById("backgroundMusic");
-        audio.volume = 0.1;
+        audio.volume = 0.5;
     function showPopup() {
         document.getElementById("popup").style.display = "block";
     }
