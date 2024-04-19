@@ -31,11 +31,6 @@
     <h1>
         HKP Sriwichai 
     </h1>
-     <!-- โค้ดเพิ่ม: เพลงในพื้นหลัง -->
-     <audio id="backgroundMusic" autoplay loop volume="0.3">
-        <source src="logo/music/so long london.MP3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
     <div class="container btn-container">
         <a href="https://forms.gle/feZkH6Cmj2T75xtUA" class="btn btn-outline-primary">สั่งเสื้อ</a>
         <a href="https://script.google.com/macros/s/AKfycbwRX-2QRp5f5bnVTej8HfhTORmAh3tPWsirHUsZ-bwZW23-XOGiScEuADnd4-C_Ivaj_Q/exec" class="btn btn-outline-primary">ข้อมูลส่วนตัว</a>
@@ -79,12 +74,14 @@
     </div>
 </div>
 
-
+<script>
+    var audio = new Audio('logo/music/so long london.MP3');
+    audio.play();
+  </script>  
 
 <script>
-    var audio = document.getElementById("backgroundMusic");
-        audio.volume = 0.3;
-    function showPopup() {
+    
+        function showPopup() {
         document.getElementById("popup").style.display = "block";
     }
 
