@@ -32,10 +32,24 @@
         HKP Sriwichai 
     </h1>
     <div class="container btn-container">
-        <a href="home.html" class="btn btn-outline-primary">เข้าสู่หน้าหลัก</a>
+        <a href="https://forms.gle/feZkH6Cmj2T75xtUA" class="btn btn-outline-primary">สั่งเสื้อ</a>
+        <a href="https://script.google.com/macros/s/AKfycbwRX-2QRp5f5bnVTej8HfhTORmAh3tPWsirHUsZ-bwZW23-XOGiScEuADnd4-C_Ivaj_Q/exec" class="btn btn-outline-primary">ข้อมูลส่วนตัว</a>
+        <a class="btn btn-outline-primary" onclick="showPopup()">เบิกเงิน</a>
+        <a href="https://forms.gle/JA7MuHf8US2ws3JG7" class="btn btn-outline-primary">แจ้งหลักฐานการโอนเงิน</a>
+        <a href="taylor.html" class="btn btn-outline-primary">Coming Soon.....</a>
     </div>
 
-       <!-- รูปเครดิต -->
+    <!-- Popup สำหรับใส่รหัสผ่าน -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="hidePopup()">&times;</span>
+            <h2>กรุณาใส่รหัสผ่าน</h2>
+            <input type="password" id="password">
+            <button onclick="checkPassword()">ยืนยัน</button>
+        </div>
+    </div>
+    <div class="footer" style="display: flex; align-items: center;">
+        <!-- รูปเครดิต -->
         <div class="credit-container">
             <img id="creditImage" src="logo/13/credit1.png" alt="Rathee Love Kamonphob">
         </div>
@@ -47,19 +61,6 @@
             <p>music copyright</p><a href="https://www.youtube.com/watch?v=HmkwjDqRcIg" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">So Long, london-Taylor Swift</a></p>
         </div>
     </div>
-   <!-- Modal -->
-<div id="welcomeModal" class="modal">
-    <div class="modal-content">
-        <h2 class="boss">ขั้นตอนการใช้งาน</h2>
-        <p>1.สั่งเสื้อ</p>
-        <p>2.เช็คข้อมูลว่าไซส์หรือจ่ายค่าเสื้อถูกต้องหรือไม่</p>
-        <p>3.เบิกเงินต้องเป็นเฉพาะหัวหน้าของแต่ละส่วนท่านั้น</p>
-        <p>มีเพลงอยู่เบื้องหลังกรุณาเบาเสียง</p>
-        <p>        </p>
-        <a class="p10">กดพื้นที่สีขาวเพื่อปิดหน้าต่างนี้</a> <!-- ใส่ class p10 เพื่อให้สามารถใช้ CSS ได้ -->
-    </div>
-</div>
-
 <script>
     var audio = new Audio('logo/music/so long london.MP3');
     audio.play();
