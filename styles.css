@@ -216,3 +216,55 @@ button:hover {
     word-break: break-word;
     border: 0;
 }
+@keyframes waveAnimation {
+    0% {
+        background-position: 0 50%; /* ตำแหน่งเริ่มต้นของพื้นหลัง */
+    }
+    100% {
+        background-position: 100% 50%; /* ตำแหน่งสุดท้ายของพื้นหลัง (ขยับไปทางขวา) */
+    }
+}
+
+.element-with-wave-background {
+    background-image: linear-gradient(to right, #ffffff 50%, #f0f0f0 50%);
+    background-size: 200% 100%; /* ขนาดของพื้นหลัง */
+    animation: waveAnimation 2s linear infinite; /* 2s คือระยะเวลาที่การเคลื่อนไหวจะใช้เพื่อทำให้พื้นหลังขยับเป็นลูกคลื่น */
+}
+/* CSS เพื่อสร้างการเลื่อนข้อความทางขวาไปทางซ้าย */
+#scroll-container {
+    border: 3px solid #fff; /* กำหนดเส้นขอบของ container เป็นเส้นขอบหนา 3px สีดำ */
+    border-radius: 5px; /* กำหนดรูปร่างของ container เป็นรูปมนเป็นเลี้ยว 5px */
+    overflow: hidden; /* กำหนดให้ข้อความที่เลื่อนเข้าไปใน container ที่มีขนาดเกินขอบจะถูกซ่อน */
+}
+
+#scroll-text {
+    text-align: right; /* จัดวางข้อความที่จะเลื่อนไปทางขวาของ container */
+
+    /* กำหนดการเคลื่อนที่ของข้อความด้วย animation */
+    -moz-transform: translateX(-100%); /* สำหรับ Firefox */
+    -webkit-transform: translateX(-100%); /* สำหรับ Chrome */
+    transform: translateX(-100%);
+
+    /* กำหนด animation ชื่อ my-animation ซึ่งจะเคลื่อนที่เป็นเส้นตรง (linear) โดยทำซ้ำอย่างไม่มีที่สิ้นสุด (infinite) */
+    -moz-animation: my-animation 15s linear infinite; /* สำหรับ Firefox */
+    -webkit-animation: my-animation 15s linear infinite; /* สำหรับ Chrome */
+    animation: my-animation 15s linear infinite;
+    color: #fff;
+}
+
+/* กำหนด keyframes ของ animation เพื่อกำหนดการเคลื่อนที่ของข้อความ */
+@keyframes my-animation {
+    from {
+        -moz-transform: translateX(-100%); /* เริ่มต้นที่ตำแหน่งซ้ายสุดของ container */
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+    to {
+        -moz-transform: translateX(100%); /* สิ้นสุดที่ตำแหน่งขวาสุดของ container */
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+}
+
+
+  
