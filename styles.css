@@ -265,6 +265,22 @@ button:hover {
         transform: translateX(100%);
     }
 }
+.credit-container {
+    position: relative;
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+    animation: fadeImage 5s infinite;
+}
+
+@keyframes fadeImage {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.4;
+    }
+}
 
 
   

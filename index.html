@@ -8,25 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="logo/logo.png">
-    <style>
-        .credit-container {
-            position: relative;
-            width: 100px;
-            height: auto;
-            margin-right: 10px;
-            animation: fadeImage 5s infinite;
-        }
-
-        @keyframes fadeImage {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.4;
-            }
-        }
-        
-    </style>
+    <script src="script.js"></script>
 </head>
 <body>   
     <h1>
@@ -61,76 +43,28 @@
 </div>
 
 <script>
-    var audio = new Audio('logo/music/1989.MP3');
-    audio.loop = true;
-    audio.play();
-  </script>  
- 
-<script>
-    
-        function showPopup() {
-        document.getElementById("popup").style.display = "block";
-    }
-
-    function hidePopup() {
-        document.getElementById("popup").style.display = "none";
-    }
-
-    function checkPassword() {
-        var password = document.getElementById("password").value;
-        // เช็ครหัสผ่าน ในที่นี้จะเป็นตัวอย่างเท่านั้น
-        if (password === "24062550") {
-            window.location.href = "https://script.google.com/macros/s/AKfycbzlZ3LMHwPSualzfm3HAmLCgSHgJQ2jnBF225yP-nUlWo7FwssNG6s9K1i1XTnqLyNS/exec"; // ลิงก์ถัดไป
-        } else {
-            alert("รหัสผ่านไม่ถูกต้อง");
-        }
-    }
-
     document.addEventListener('DOMContentLoaded', function() {
-        showModal();
-    });
+        var creditImages = [
+            "logo/13/credit1.png",
+            "logo/13/credit2.png",
+            "logo/13/credit3.png",
+            "logo/13/credit4.png",
+            "logo/13/credit5.png",
+            "logo/13/credit6.png",
+            "logo/13/credit7.png",
+            "logo/13/credit8.png",
+            "logo/13/credit9.png",
+        ];
+        var currentIndex = 0;
+        var creditImage = document.getElementById("creditImage");
 
-    function showModal() {
-        var modal = document.getElementById('welcomeModal');
-        modal.style.display = 'block';
-    }
-
-    // ปิด Modal เมื่อคลิกที่พื้นหลัง
-    var modal = document.getElementById('welcomeModal');
-    modal.addEventListener('click', function(event) {
-        if (event.target === modal) {
-            hideModal();
+        function changeCreditImage() {
+            currentIndex = (currentIndex + 1) % creditImages.length;
+            creditImage.src = creditImages[currentIndex];
         }
+
+        setInterval(changeCreditImage, 5000);
     });
-
-    // ปิด Modal โดยซ่อนแบบฟังก์ชัน
-    function hideModal() {
-        modal.style.display = 'none';
-    }
-
-    var creditImages = [
-        "logo/13/credit1.png",
-        "logo/13/credit2.png",
-        "logo/13/credit3.png",
-        "logo/13/credit4.png",
-        "logo/13/credit5.png",
-        "logo/13/credit6.png",
-        "logo/13/credit7.png",
-        "logo/13/credit8.png",
-        "logo/13/credit9.png",
-    ];
-    var currentIndex = 0;
-    var creditImage = document.getElementById("creditImage");
-
-    function changeCreditImage() {
-        currentIndex = (currentIndex + 1) % creditImages.length;
-        creditImage.src = creditImages[currentIndex];
-    }
-
-    setInterval(changeCreditImage, 5000);
-
-
-
 </script>
 </body>
 </html>
