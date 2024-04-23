@@ -46,26 +46,6 @@
     Your browser does not support the audio element.
 </audio>
 <script>
-    function showModal() {
-        var modal = document.getElementById('welcomeModal');
-        modal.style.display = 'block';
-    }
-
-    function hideModal() {
-        var modal = document.getElementById('welcomeModal');
-        modal.style.display = 'none';
-    }
-
-    // ปิด Modal เมื่อคลิกที่พื้นหลัง
-    var modal = document.getElementById('welcomeModal');
-    modal.addEventListener('click', function(event) {
-        if (event.target === modal) {
-            hideModal();
-        }
-    });
-</script>
-
-<script>
     document.addEventListener('DOMContentLoaded', function() {
         var creditImages = [
             "logo/13/credit1.png",
@@ -105,6 +85,23 @@ modal.addEventListener('click', function(event) {
         hideModal();
     }
 });
+function showModal() {
+        var modal = document.getElementById('welcomeModal');
+        modal.style.display = 'block';
+    }
+
+    function hideModal() {
+        var modal = document.getElementById('welcomeModal');
+        modal.style.display = 'none';
+    }
+
+    // ปิด Modal เมื่อคลิกที่พื้นหลัง
+    var modal = document.getElementById('welcomeModal');
+    modal.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            hideModal();
+        }
+    });
 var audio = document.getElementById("backgroundMusic");
         audio.volume = 0.1;
 
