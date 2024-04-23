@@ -65,6 +65,23 @@
 
         setInterval(changeCreditImage, 5000);
     });
+    function showModal() {
+    var modal = document.getElementById('welcomeModal');
+    modal.style.display = 'block';
+}
+
+function hideModal() {
+    var modal = document.getElementById('welcomeModal');
+    modal.style.display = 'none';
+}
+
+// ปิด Modal เมื่อคลิกที่พื้นหลัง
+var modal = document.getElementById('welcomeModal');
+modal.addEventListener('click', function(event) {
+    if (event.target === modal) {
+        hideModal();
+    }
+});
 </script>
 </body>
 </html>

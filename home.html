@@ -71,6 +71,22 @@
     
             setInterval(changeCreditImage, 5000);
         });
+        function showPopup() {
+    document.getElementById("popup").style.display = "block";
+}
+
+function hidePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+
+function checkPassword() {
+    var password = document.getElementById("password").value;
+    if (password === "24062550") {
+        window.location.href = "https://script.google.com/macros/s/AKfycbzlZ3LMHwPSualzfm3HAmLCgSHgJQ2jnBF225yP-nUlWo7FwssNG6s9K1i1XTnqLyNS/exec"; // ลิงก์ถัดไป
+    } else {
+        alert("รหัสผ่านไม่ถูกต้อง");
+    }
+}
     </script>
     
 </body>
