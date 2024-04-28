@@ -281,8 +281,21 @@ button:hover {
         opacity: 0.4;
     }
 }
-.ts{
-    
+.ts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: orange;
+    font-size: small;
+}
+
+.bf {
+    background-color: #fff; /* สีพื้นหลังของกล่อง */
+    border: 3px solid ##757575; /* ขอบของกล่อง */
+    padding: 20px; /* ระยะห่างภายในกล่อง */
+}
+.rc{
+    text-align: center;
 }
 
   
