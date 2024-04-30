@@ -1,0 +1,92 @@
+*{
+    font-family: "Chakra Petch", sans-serif;
+}
+
+body {
+    font-family: "Chakra Petch", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: grey;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer {
+    border: #fff;
+    color: #fff; /* สีข้อความขาว */
+    text-align: left;
+    border-top: 1px solid #fff; /* เพิ่มเส้นขอบด้านบน */
+    padding-top: 10px; /* เพิ่มระยะห่างด้านบน */
+    margin-top: 20px; /* เพิ่มระยะห่างด้านบน */
+    font-size: 8px; /* ลดขนาดตัวหนังสือเป็น x-small */
+    position: absolute; /* ติดตั้งเป็นตำแหน่งแบบ absolute */
+    width: 100%; /* กว้างเต็มขอบ */
+    bottom: 0; /* จัดไปที่ขอบล่างของหน้าเว็บ */
+    left: 0; /* จัดไปที่ขอบซ้ายของหน้าเว็บ */
+    right: 0;
+    line-height: 1.5; /* กำหนดความสูงของบรรทัด */
+    margin: 0; /* ไม่มีการเว้นระยะห่าง */
+    background-color: #FA4616;
+}
+
+.animate-credit {
+    animation: fadeOutIn 5s infinite;
+}
+.credit-container img {
+    width: 100px; /* ความกว้างของรูปภาพ */
+    height: auto; /* ความสูงของรูปภาพจะปรับตามอัตราส่วน */
+}
+.tischa {
+    text-align: center;
+    color: #fff;
+
+}
+.credit-container {
+    position: relative;
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+    animation: fadeImage 5s infinite;
+}
+h1{
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.container {
+    text-align: center;
+    color: #fff;
+}
+  
+  .text-left {
+    text-align: left;
+    display: inline-block;
+}
+.rc{
+    text-align: center;
+}
+
+
+/* CSS */
+.button-34 {
+  background: #5E5DF0;
+  border-radius: 999px;
+  box-shadow: #5E5DF0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
