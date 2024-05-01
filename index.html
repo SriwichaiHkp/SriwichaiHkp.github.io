@@ -7,7 +7,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="TS.css">
+    <link rel="stylesheet" href="script.js">
     <link rel="icon" type="image/png" href="logo/logo.png">
+    <script src="script.js"></script>
     <style>
         .credit-container {
             position: relative;
@@ -25,12 +27,35 @@
                 opacity: 0.4;
             }
         }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+        }
+
+        .GG {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            margin-top: 20px;
+            font-size: 36px;
+            overflow: hidden;
+        }
+
+        .GG span {
+            display: inline-block;
+            animation: typing 3s steps(28, end) forwards;
+        }
     </style>
 </head>
 <body>
-    <h1>
-        HKP Sriwichai 
+    <h1 class="GG">
+        <span>HKP x ESC KMUTT</span>
     </h1>
+    
     <div class="footer" style="display: flex; align-items: center;">
         <!-- รูปเครดิต -->
         <div class="credit-container">
@@ -128,8 +153,24 @@
 
     setInterval(changeCreditImage, 5000);
 
+    // JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+  typeWriterEffect();
+});
 
+function typeWriterEffect() {
+  const text = document.querySelector('.GG');
+  const textContent = text.textContent;
+  text.textContent = '';
 
+  for (let i = 0; i < textContent.length; i++) {
+    const char = textContent.charAt(i);
+    const span = document.createElement('span');
+    span.textContent = char;
+    span.style.animationDelay = `${i * 0.1}s`; // Adjust the delay as needed
+    text.appendChild(span);
+  }
+}
 </script>
 </body>
 </html>

@@ -12,7 +12,19 @@
 </head>
 <body>
     <h1>
-        HKP Sriwichai 
+        <span>H</span>
+        <span>K</span>
+        <span>P</span>
+        <span> </span>
+        <span>S</span>
+        <span>r</span>
+        <span>i</span>
+        <span>w</span>
+        <span>i</span>
+        <span>c</span>
+        <span>h</span>
+        <span>a</span>
+        <span>i</span>
     </h1>
 
     <div id="scroll-container">
@@ -103,5 +115,26 @@ var audio = document.getElementById("backgroundMusic");
             }
         }
 </script>
+<script>
+    document.addEventListener('DOMContentLoaded', typeWriterEffect);
+    document.addEventListener('DOMContentLoaded', function() {
+      typeWriterEffect();
+    });
+    
+    function typeWriterEffect() {
+      const text = document.querySelector('.GG');
+      const textContent = text.textContent;
+      text.textContent = '';
+    
+      for (let i = 0; i < textContent.length; i++) {
+        const char = textContent.charAt(i);
+        const span = document.createElement('span');
+        span.textContent = char;
+        span.style.animationDelay = `${i * 0.1}s`; // Adjust the delay as needed
+        text.appendChild(span);
+      }
+    }
+    </script>
+    
 </body>
 </html>
