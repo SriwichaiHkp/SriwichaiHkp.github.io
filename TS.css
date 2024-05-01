@@ -6,10 +6,11 @@ body {
     font-family: "Chakra Petch", sans-serif;
     margin: 0;
     padding: 0;
-    background: grey;
+    background: linear-gradient(to bottom right, #FA4616, #FFC72C); /* เปลี่ยนสีตามที่ต้องการ */
     display: flex;
     flex-direction: column;
     text-align: center;
+    height: 100vh;
 }
 
 .footer {
@@ -27,7 +28,7 @@ body {
     right: 0;
     line-height: 1.5; /* กำหนดความสูงของบรรทัด */
     margin: 0; /* ไม่มีการเว้นระยะห่าง */
-    background-color: #FA4616;
+    background-color: #7B8189;
 }
 
 .animate-credit {
@@ -63,6 +64,7 @@ h1{
   .text-left {
     text-align: left;
     display: inline-block;
+    
 }
 .rc{
     text-align: center;
@@ -71,9 +73,9 @@ h1{
 
 /* CSS */
 .button-34 {
-  background: #5E5DF0;
+  background: #a72c32;
   border-radius: 999px;
-  box-shadow: #5E5DF0 0 10px 20px -10px;
+  box-shadow: #7B8189 0 10px 20px -10px;
   box-sizing: border-box;
   color: #FFFFFF;
   cursor: pointer;
@@ -90,16 +92,18 @@ h1{
   word-break: break-word;
   border: 0;
 }
-.imgs {
-    width: 100%; /* กำหนดให้ขนาดของ .imgs เต็มขนาดของพื้นที่ที่ต้องการแสดง */
-    white-space: nowrap; /* ให้รูปภาพอยู่ในบรรทัดเดียวกัน */
-    overflow-x: auto; /* เพื่อให้สามารถเลื่อนรูปภาพในกรณีที่มีมากกว่าพื้นที่ที่แสดงได้ */
+.container1{
+    background-color: rgba(254, 209, 16); /* สีพื้นหลังใส */
+    padding: 5vw; /* ใช้ความกว้างของหน้าจอเป็นหน่วย */
+    border: 1px ; /* เส้นขอบ */
+    border-radius: 5vw; /* ทำให้มุมโค้ง */
+    width: 90%; /* ความกว้าง */
+    max-width: 400px; /* กำหนดขนาดของกล่องสูงสุด */
+    max-height: 300px;
+    margin: 0 auto; /* แสดงกล่องกึ่งกลางหน้าจอ */
+    box-shadow: 0 4px 8px rgba(167, 44, 50); /* เงา */
+    opacity: 1; /* ความโปร่งใส */
 }
-
-.imgs img {
-    width: 1cm; /* กำหนดความกว้างของรูปภาพ */
-    height: auto; /* ให้ความสูงปรับอัตโนมัติเพื่อรักษาสัดส่วน */
-    display: inline-block; /* จัดให้รูปภาพแสดงในบรรทัดเดียวกัน */
-    margin-right: 10px; /* กำหนดระยะห่างระหว่างรูปภาพ */
+.container1 p {
+    margin: auto;
 }
-
