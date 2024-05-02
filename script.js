@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    setInterval(typeWriterEffect, 5000); // เรียกใช้ typeWriterEffect ทุก 5 วินาที
+    setInterval(typeWriterEffect, 4000); // เรียกใช้ typeWriterEffect ทุก 5 วินาที
 });
 
 function typeWriterEffect() {
