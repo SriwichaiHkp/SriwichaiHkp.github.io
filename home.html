@@ -12,23 +12,11 @@
 </head>
 <body>
     <h1>
-        <span>H</span>
-        <span>K</span>
-        <span>P</span>
-        <span> </span>
-        <span>S</span>
-        <span>r</span>
-        <span>i</span>
-        <span>w</span>
-        <span>i</span>
-        <span>c</span>
-        <span>h</span>
-        <span>a</span>
-        <span>i</span>
+        HKP SRIWICHAI
     </h1>
 
     <div id="scroll-container">
-        <div id="scroll-text">คิดไม่ออก</div>
+        <div id="scroll-text">Hello World</div>
     </div>
 
     <div class="container btn-container">
@@ -65,44 +53,7 @@
         Your browser does not support the audio element.
     </audio>    
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var creditImages = [
-                "logo/13/credit1.png",
-                "logo/13/credit2.png",
-                "logo/13/credit3.png",
-                "logo/13/credit4.png",
-                "logo/13/credit5.png",
-                "logo/13/credit6.png",
-                "logo/13/credit7.png",
-                "logo/13/credit8.png",
-                "logo/13/credit9.png",
-            ];
-            var currentIndex = 0;
-            var creditImage = document.getElementById("creditImage");
-    
-            function changeCreditImage() {
-                currentIndex = (currentIndex + 1) % creditImages.length;
-                creditImage.src = creditImages[currentIndex];
-            }
-    
-            setInterval(changeCreditImage, 5000);
-        });
-        function showPopup() {
-    document.getElementById("popup").style.display = "block";
-}
-
-function hidePopup() {
-    document.getElementById("popup").style.display = "none";
-}
-
-function checkPassword() {
-    var password = document.getElementById("password").value;
-    if (password === "24062550") {
-        window.location.href = "https://script.google.com/macros/s/AKfycbwj3ZzrBQzG22lYU6SPQxXGlhXVupk0x0H274gEFqaMqyvAiGNv5-zOANXqiax7Pqtj/exec"; // ลิงก์ถัดไป
-    } else {
-        alert("รหัสผ่านไม่ถูกต้อง");
-    }
-}
+       
 var audio = document.getElementById("backgroundMusic");
         audio.volume = 10;
 
@@ -114,27 +65,6 @@ var audio = document.getElementById("backgroundMusic");
                 backgroundMusic.pause();
             }
         }
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', typeWriterEffect);
-    document.addEventListener('DOMContentLoaded', function() {
-      typeWriterEffect();
-    });
-    
-    function typeWriterEffect() {
-      const text = document.querySelector('.GG');
-      const textContent = text.textContent;
-      text.textContent = '';
-    
-      for (let i = 0; i < textContent.length; i++) {
-        const char = textContent.charAt(i);
-        const span = document.createElement('span');
-        span.textContent = char;
-        span.style.animationDelay = `${i * 0.1}s`; // Adjust the delay as needed
-        text.appendChild(span);
-      }
-    }
-    </script>
-    
+</script>    
 </body>
 </html>
