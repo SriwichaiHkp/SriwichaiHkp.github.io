@@ -3,26 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon....</title>
+    <title>COMING SOON</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="logo/13/credit3.png">
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
 </head>
 <body>
     <h1>
-        Sriwichai
+        COMING SOON
     </h1>
-    <p class="tischa">
-        Coming Soon......
-    </p>
-    <div class="container btn-container">
-        <a href="home.html" class="btn btn-outline-primary">กลับหน้าหลัก</a>
+        <a href="home.html" class="btn btn-outline-primary">ไปหน้าหลัก</a>
     </div>
-    <!-- โค้ดเพิ่ม: เพลงในพื้นหลัง -->
-    <audio id="backgroundMusic" autoplay loop volume="0.1">
-        <source src="logo/music/Y2DL_Taylor_Swift_-_Style_(Taylor's_Version)_[Instrumental].mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>    
+    <!-- โค้ดเพิ่ม: เพลงในพื้นหลัง -->   
     <div class="footer" style="display: flex; align-items: center;">
         <!-- รูปเครดิต -->
         <div class="credit-container">
@@ -35,39 +28,5 @@
             <p>2.นายรัฐธีร์ เฉลิมนิธิวงศ์ นักเรียน <a href="https://gifted.kmutt.ac.th/th/home" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">โรงเรียนดรุณสิกขาลัย โครงการห้องเรียน วิศว์-วิทย์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี</a></p>
         </div>
     </div>
-    <script>
-        var audio = document.getElementById("backgroundMusic");
-        audio.volume = 0.1;
-
-        function toggleBackgroundMusic() {
-            var backgroundMusic = document.getElementById('backgroundMusic');
-            if (backgroundMusic.paused) {
-                backgroundMusic.play();
-            } else {
-                backgroundMusic.pause();
-            }
-        }
-
-        var creditImages = [
-            "logo/13/credit1.png",
-            "logo/13/credit2.png",
-            "logo/13/credit3.png",
-            "logo/13/credit4.png",
-            "logo/13/credit5.png",
-            "logo/13/credit6.png",
-            "logo/13/credit7.png",
-            "logo/13/credit8.png",
-            "logo/13/credit9.png",
-        ];
-        var currentIndex = 0;
-        var creditImage = document.getElementById("creditImage");
-
-        function changeCreditImage() {
-            currentIndex = (currentIndex + 1) % creditImages.length;
-            creditImage.src = creditImages[currentIndex];
-        }
-
-        setInterval(changeCreditImage, 5000);
-    </script>
 </body>
 </html>
