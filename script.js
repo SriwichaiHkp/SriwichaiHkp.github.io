@@ -20,12 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
         "logo/13/credit1.png",
         "logo/13/credit2.png",
         "logo/13/credit3.png",
-        "logo/13/credit4.png",
-        "logo/13/credit5.png",
-        "logo/13/credit6.png",
-        "logo/13/credit7.png",
-        "logo/13/credit8.png",
-        "logo/13/credit9.png",
     ];
     var currentIndex = 0;
     var creditImage = document.getElementById("creditImage");
