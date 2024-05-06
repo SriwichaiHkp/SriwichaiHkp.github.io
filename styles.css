@@ -232,14 +232,14 @@ button:hover {
 }
 /* CSS เพื่อสร้างการเลื่อนข้อความทางขวาไปทางซ้าย */
 #scroll-container {
-    border: 3px solid #fff; /* กำหนดเส้นขอบของ container เป็นเส้นขอบหนา 3px สีดำ */
+    border: 0px solid #fff; /* กำหนดเส้นขอบของ container เป็นเส้นขอบหนา 3px สีดำ */
     border-radius: 5px; /* กำหนดรูปร่างของ container เป็นรูปมนเป็นเลี้ยว 5px */
     overflow: hidden; /* กำหนดให้ข้อความที่เลื่อนเข้าไปใน container ที่มีขนาดเกินขอบจะถูกซ่อน */
 }
 
 #scroll-text {
-    text-align: right; /* จัดวางข้อความที่จะเลื่อนไปทางขวาของ container */
-
+    text-align: left; /* จัดวางข้อความที่จะเลื่อนไปทางขวาของ container */
+    font-size: smaller;
     /* กำหนดการเคลื่อนที่ของข้อความด้วย animation */
     -moz-transform: translateX(-100%); /* สำหรับ Firefox */
     -webkit-transform: translateX(-100%); /* สำหรับ Chrome */
@@ -255,14 +255,14 @@ button:hover {
 /* กำหนด keyframes ของ animation เพื่อกำหนดการเคลื่อนที่ของข้อความ */
 @keyframes my-animation {
     from {
-        -moz-transform: translateX(-100%); /* เริ่มต้นที่ตำแหน่งซ้ายสุดของ container */
-        -webkit-transform: translateX(-100%);
-        transform: translateX(-100%);
-    }
-    to {
-        -moz-transform: translateX(100%); /* สิ้นสุดที่ตำแหน่งขวาสุดของ container */
+        -moz-transform: translateX(100%); /* เริ่มต้นที่ตำแหน่งซ้ายสุดของ container */
         -webkit-transform: translateX(100%);
         transform: translateX(100%);
+    }
+    to {
+        -moz-transform: translateX(-100%); /* สิ้นสุดที่ตำแหน่งขวาสุดของ container */
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
     }
 }
 .credit-container {

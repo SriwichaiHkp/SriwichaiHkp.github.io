@@ -5,7 +5,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: #FA4616;
+    background: linear-gradient(to left, rgb(0, 28, 73), rgb(0, 28, 154), rgb(167, 208, 255));
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,7 +25,6 @@ body {
     right: 0;
     line-height: 1.5;
     margin: 0;
-    background-color: #7B8189;
 }
 
 .animate-credit {
@@ -55,3 +54,40 @@ body {
       width: 0;
     }
   }
+  .btn-container {
+    display: flex;
+}
+
+.btn {
+    flex: 1;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 13px;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid #fff; /* เส้นขอบสีน้ำเงิน */
+    color: #fff; /* สีน้ำเงิน */
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    width: 200px; /* กำหนดความกว้าง */
+    box-sizing: border-box; /* เพื่อให้ padding และ border ไม่นับเข้าไปใน width */
+}
+
+.btn:hover {
+    background-color: #007bff; /* พื้นหลังสีน้ำเงินเมื่อโฮเวอร์ */
+    color: #fff; /* ข้อความสีขาวเมื่อโฮเวอร์ */
+}
+.container {
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
+h1 {
+    text-align: center;
+    color: #fff; /* สีน้ำเงิน */
+    margin-bottom: 20px;
+}

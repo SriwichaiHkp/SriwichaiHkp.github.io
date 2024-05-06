@@ -5,7 +5,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: #FA4616;
+    background: linear-gradient(to right, #FA4616, #FFC72C);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,7 +25,6 @@ body {
     right: 0;
     line-height: 1.5;
     margin: 0;
-    background-color: #7B8189;
 }
 
 .animate-credit {
