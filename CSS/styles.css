@@ -297,5 +297,9 @@ button:hover {
 .rc{
     text-align: center;
 }
+.credit-container img {
+    width: 150px; /* เพิ่มความกว้างของรูปภาพ */
+    height: auto; /* ให้ความสูงของรูปภาพปรับอัตราส่วน */
+}
 
   
