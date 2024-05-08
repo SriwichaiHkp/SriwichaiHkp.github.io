@@ -297,14 +297,5 @@ button:hover {
 .rc{
     text-align: center;
 }
-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50px;
-    max-width: 10%; /* รูปจะปรับขนาดให้ไม่เกินความกว้างของพื้นที่ที่ติดตั้ง */
-    height: auto; /* รักษาอัตราส่วนของรูปภาพ */
-    z-index: -1; /* ให้รูปอยู่หลังเนื้อหา */
-}
 
   
