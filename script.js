@@ -44,7 +44,7 @@ function checkPassword() {
     var password = document.getElementById("password").value;
     // เช็ครหัสผ่าน ในที่นี้จะเป็นตัวอย่างเท่านั้น
     if (password === "24062550") {
-        window.location.href = "https://script.google.com/macros/s/AKfycbzlZ3LMHwPSualzfm3HAmLCgSHgJQ2jnBF225yP-nUlWo7FwssNG6s9K1i1XTnqLyNS/exec"; // ลิงก์ถัดไป
+        window.location.href = "admin.html"; // ลิงก์ถัดไป
     } else {
         alert("รหัสผ่านไม่ถูกต้อง");
     }

@@ -22,9 +22,9 @@
     <div class="container btn-container">
         <a href="https://script.google.com/macros/s/AKfycbxwqKEuEbY5DcxaktZjtmVrlp8KBRYUjdJZH93LxzP3enK2B1zwriziBvZJ4Pu6P8k/exec" class="btn btn-outline-primary">สั่งเสื้อ</a>
         <a href="https://script.google.com/macros/s/AKfycbzNyZakQ3gfts3O2-cj-4so-hsMjUJn5UnHsYQ9frzC9NFPMULDc_pTCF3GpCNXwL13Eg/exec" class="btn btn-outline-primary">ข้อมูลส่วนตัว</a>
-        <a href="admin.html" class="btn btn-outline-primary" onclick="ShowPopup()" >เบิกเงิน</a>
+        <a class="btn btn-outline-primary" onclick="showPopup()">Saff</a>
         <a href="https://forms.gle/JA7MuHf8US2ws3JG7" class="btn btn-outline-primary">แจ้งหลักฐานการโอนเงิน</a>
-        <a href="https://forms.gle/dvgJTDZguo8NNgdF7" class="btn btn-outline-primary">แจ้งปัญหา</a>
+        <a href="report.html" class="btn btn-outline-primary">แจ้งปัญหา</a>
     </div>
 
     <div class="footer" style="display: flex; align-items: center;">
@@ -37,6 +37,14 @@
             <p> All Rights Reserved.Power By </p>
             <p>1.นายกมลภพ ศรีสัมฤทธิ์ นักเรียน</p><a href="https://www.hunkhapit.ac.th/" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover ">โรงเรียนหันคาพิทยาคม</a></p>
             <p>2.นายรัฐธีร์ เฉลิมนิธิวงศ์ นักเรียน </p><a href="https://gifted.kmutt.ac.th/th/home" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">โรงเรียนดรุณสิกขาลัย โครงการห้องเรียน วิศว์-วิทย์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี</a></p>
+        </div>
+    </div>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="hidePopup()">&times;</span>
+            <h2>กรุณาใส่รหัสผ่าน</h2>
+            <input type="password" id="password">
+            <button onclick="checkPassword()">ยืนยัน</button>
         </div>
     </div>
     <audio id="backgroundMusic" autoplay loop volume="10">
@@ -56,6 +64,23 @@ var audio = document.getElementById("backgroundMusic");
                 backgroundMusic.pause();
             }
         }
+        function showPopup() {
+        document.getElementById("popup").style.display = "block";
+    }
+
+    function hidePopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+
+    function checkPassword() {
+        var password = document.getElementById("password").value;
+        // เช็ครหัสผ่าน ในที่นี้จะเป็นตัวอย่างเท่านั้น
+        if (password === "24062550") {
+            window.location.href = "admin.html"; // ลิงก์ถัดไป
+        } else {
+            alert("รหัสผ่านไม่ถูกต้อง");
+        }
+    }
 </script>    
 </body>
 </html>
