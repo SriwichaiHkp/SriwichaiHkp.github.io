@@ -295,7 +295,7 @@ button:hover {
     padding: 20px; /* ระยะห่างภายในกล่อง */
 }
 .rc{
-    text-align: center;
+    padding: top;
 }
 
   
