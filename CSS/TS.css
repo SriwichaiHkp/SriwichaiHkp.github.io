@@ -5,7 +5,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #FA4616, #FFC72C);
+    background: linear-gradient(to right, #FA4616, #a72c32);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -72,9 +72,18 @@ body {
     animation: typing 3s steps(28, end) forwards;
   }
   
-  
-  
+  .container1 {
+    background-color: rgba(254, 209, 16);
+    padding: 5vw;
+    width: 90%;
+    height: 300px;
+    max-width: 300px;
+    max-height: 250px;
+    bottom: 10px;
+    margin: top;
 
+}
+  
 .container {
     text-align: center;
     color: #fff;
@@ -112,20 +121,16 @@ body {
     word-break: break-word;
     border: 0;
     margin: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 100px;
+    transition: margin-bottom 0.3s ease; /* เพิ่ม transition เพื่อทำให้มันลงมาอย่างสวยงาม */
 }
 
-.container1 {
-    background-color: rgba(254, 209, 16);
-    padding: 5vw;
-    border-radius: 5vw;
-    width: 90%;
-    height: 300px;
-    max-width: 300px;
-    max-height: 250px;
-    bottom: 10px;
-    margin: 25px;
+.button-34:hover {
+    margin-bottom: 200px; /* เพิ่ม margin-bottom ที่ใหญ่ขึ้นเมื่อ hover */
 }
+
+
+
 .container1 p {
     margin: auto;
 }
@@ -149,3 +154,12 @@ body {
 .red{
     color: #FA4616;
 }
+header {
+
+    color: white;
+    height: 100px; /* กำหนดความสูงของส่วนด้านบน */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
