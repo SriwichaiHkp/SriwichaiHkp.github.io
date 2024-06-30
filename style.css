@@ -1,0 +1,16 @@
+*{
+    font-family: "Chakra Petch", sans-serif;
+}
+.navbar-custom {
+    background-color:  #7B8189; /* เปลี่ยนสีพื้นหลัง */
+}
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+    color: #ffffff; /* เปลี่ยนสีข้อความ */
+}
+.navbar-toggler {
+    border-color: #FA4616; /* Set the border color here */
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23FA4616' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
