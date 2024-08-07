@@ -10,25 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <script src="script.js"></script>
     <style>
-        .iframe-container {
-            position: relative;
-            width: 90%;
-            height: 90vh;
-            padding-bottom: 75%; /* 4:3 aspect ratio */
-            overflow: hidden;
-        }
-
-        .iframe-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
         .content-container {
             margin: 20px;
+        }
+        .alert {
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -58,9 +44,10 @@
     
     <div class="content-container">
         <h1 class="text-center">โอนจ่าย</h1>
-        <div class="iframe-container">
-            <iframe src="https://script.google.com/macros/s/AKfycbwfNnZQ8cl16C4AguD1DZMMD08MWWZdUPSdDmclSmpv0MwV6_2F7vMrLk00cnaxT0SQuQ/exec" sandbox="allow-same-origin allow-scripts"></iframe>
-
+        <div class="alert alert-info text-center" role="alert">
+            เนื่องจากข้อกำหนดการตั้งค่าของเว็บไซต์ Google Apps Script คุณไม่สามารถแสดงเนื้อหาใน iframe ได้ โปรดคลิกที่ลิงก์ด้านล่างเพื่อไปยังหน้าเว็บที่เกี่ยวข้อง:
+            <br>
+            <a href="https://script.google.com/macros/s/AKfycbwfNnZQ8cl16C4AguD1DZMMD08MWWZdUPSdDmclSmpv0MwV6_2F7vMrLk00cnaxT0SQuQ/exec" class="btn btn-primary mt-2" target="_blank">ไปยังหน้า Google Apps Script</a>
         </div>
     </div>
 
