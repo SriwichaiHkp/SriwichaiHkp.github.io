@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,18 +11,21 @@
     <script src="script.js"></script>
     <style>
         .navbar-toggler {
-            border-color: #FA4616; /* Set the border color here */
+            border-color: #FA4616;
         }
+
         .navbar-toggler-icon {
             background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23FA4616' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
         }
+
         .iframe-container {
             position: relative;
             width: 100%;
             height: 0;
-            padding-bottom: 150%; /* Adjust this value to increase the height */
+            padding-bottom: 100vh; /* ลดค่านี้เพื่อให้ iframe สูงขึ้น */
             overflow: hidden;
         }
+
         .iframe-container iframe {
             position: absolute;
             top: 0;
@@ -31,8 +34,10 @@
             height: 100%;
             border: 0;
         }
+
         .content-container {
-            margin: 20px;
+            margin-top: 60px; /* เพิ่ม margin-top เพื่อปรับตำแหน่ง */
+            margin-bottom: 20px;
         }
     </style>
 </head>
