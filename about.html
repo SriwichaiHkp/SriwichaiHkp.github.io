@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="script.js"></script>
     <style>
         .iframe-container {
@@ -29,6 +30,49 @@
 
         .content-container {
             margin: 20px;
+        }
+
+        .box {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .navbar-custom {
+            background-color: #0056b3;
+            padding: 1rem;
+        }
+
+        .navbar-custom .navbar-brand, .navbar-custom .nav-link {
+            color: #fff;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #f8f9fa;
+        }
+
+        .footer {
+            background-color: #343a40;
+        }
+
+        .footer a {
+            color: #f8f9fa;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .contact-section li {
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -65,26 +109,33 @@
 
     <section id="contact" class="contact-section py-5">
         <div class="container">
-            <h2>แจ้งข้อผิดพลาด</h2>
-            <ul>
-                <li> Line :<font color="black"><b> kamonphop111</li> </b> </font>
-                </li>
-                <li> Facebook :<font color="black"><b> <a href="https://www.facebook.com/tischa13">Kamonphob Srisamrit</a></li>
-                    </b> </font>
-                </li>
-                <li> Email : <font color="black"><b> sriwichaihkp@gmail.com </b></font>
-                </li>
-                <li> <a href="https://forms.gle/HoBogHLFbpVzfvB48">>>คลิกเพื่อเพิ่มชื่อ-นามสกุล<<</a></li>
-                <li> <a href="https://forms.gle/HoBogHLFbpVzfvB48">>>คลิกเพื่อแก้ไขชื่อ-นามสกุล<<</a></li>
-                <li> <a href="https://forms.gle/qeqvrzWwoAW1LXTs8">>>คลิกเพื่อแจ้ง REPORT <<</a></li>
-              </ul>
+            <div class="box">
+                <h2>แจ้งข้อผิดพลาด</h2>
+                <ul>
+                    <li>Line: <strong>kamonphop111</strong></li>
+                    <li>Facebook: <a href="https://www.facebook.com/tischa13"><strong>Kamonphob Srisamrit</strong></a></li>
+                    <li>Email: <a href="mailto:sriwichaihkp@gmail.com"><strong>sriwichaihkp@gmail.com</strong></a></li>
+                    <li><a href="https://forms.gle/HoBogHLFbpVzfvB48">>>คลิกเพื่อเพิ่มชื่อ-นามสกุล<<</a></li>
+                    <li><a href="https://forms.gle/HoBogHLFbpVzfvB48">>>คลิกเพื่อแก้ไขชื่อ-นามสกุล<<</a></li>
+                    <li><a href="https://forms.gle/qeqvrzWwoAW1LXTs8">>>คลิกเพื่อแจ้ง REPORT<<</a></li>
+                </ul>
             </div>
         </div>
     </section>
 
     <footer class="footer bg-dark text-white py-3">
         <div class="container text-center">
-            <p>&copy; 2024 sriwichaiHKP. All rights reserved</p>
+            <p>&copy; 2024 KSRISAMRIT. All Rights Reserved.</p>
+            <div class="social-icons text-center">
+                <a href="https://www.facebook.com/tischa13" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://line.me/R/ti/p/@kamonphop111" target="_blank" title="Line">
+                    <i class="fab fa-line"></i>
+                </a>
+                <a href="mailto:sriwichaihkp@gmail.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
         </div>
     </footer>
 
@@ -93,3 +144,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
