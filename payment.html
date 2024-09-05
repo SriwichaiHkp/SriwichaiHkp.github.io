@@ -10,40 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        .container {
-            padding: 20px;
-        }
-        .table-container {
-            margin-top: 20px;
-        }
-        .social-icons {
-            font-size: 24px;
-            margin: 10px 0;
-        }
-        .social-icons a {
-            color: #ffffff;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-        .social-icons a:hover {
-            color: #FA4616;
-        }
-        .navbar-custom {
-            background-color: #0056b3;
-            padding: 1rem;
-        }
-        .navbar-custom .navbar-brand, .navbar-custom .nav-link {
-            color: #fff;
-        }
-        .navbar-custom .nav-link:hover {
-            color: #f8f9fa;
-        }
-        .footer {
-            background-color: #343a40;
-        }
-        .footer p {
-            margin: 0;
-        }
+        /* CSS ของคุณที่ปรับใช้ */
     </style>
 </head>
 <body>
@@ -69,7 +36,7 @@
             </ul>
         </div>
     </nav>
-
+    
     <header class="hero-section text-center">
         <div class="container">
             <h1>รายชื่อ</h1>
@@ -77,31 +44,29 @@
         </div>
     </header>
 
-    <div class="container">
-        <div class="input-group mb-3">
-            <input type="text" id="searchTerm" class="form-control" placeholder="Enter keyword" aria-label="Enter keyword">
-            <div class="input-group-append">
-                <button class="btn btn-primary" type="button" onclick="search()">Search</button>
+    <div class="content-container">
+        <div class="container">
+            <h2 class="text-center">ค้นหาข้อมูล</h2>
+            <input type="text" id="searchTerm" placeholder="กรอกคำค้นหา" class="form-control mb-3">
+            <button onclick="search()" class="btn btn-primary btn-block">ค้นหา</button>
+            <div id="table-container">
+                <table class="table table-bordered mt-3">
+                    <thead>
+                        <tr>
+                            <th>ชั้น</th>
+                            <th>เลขประจำตัวนักเรียน</th>
+                            <th>ชื่อ-นามสกุล</th>
+                            <th>SIZE</th>
+                            <th>Email</th>
+                            <th>ประเภทเสื้อ</th>
+                            <th>Payment</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- ข้อมูลจะถูกเติมที่นี่ -->
+                    </tbody>
+                </table>
             </div>
-        </div>
-
-        <div class="table-container">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>ชั้น</th>
-                        <th>เลขประจำตัวนักเรียน</th>
-                        <th>ชื่อ-นามสกุล</th>
-                        <th>SIZE</th>
-                        <th>Email</th>
-                        <th>ประเภทเสื้อ</th>
-                        <th>Payment</th>
-                    </tr>
-                </thead>
-                <tbody id="tableBody">
-                    <!-- ข้อมูลจะถูกเติมที่นี่ -->
-                </tbody>
-            </table>
         </div>
     </div>
 
@@ -125,25 +90,44 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <script>
         function search() {
+  openModal(); // เปิด pop-up รอสักครู่
   var term = document.getElementById("searchTerm").value;
-  var url = 'https://script.google.com/macros/s/AKfycbxUsXrZ-FfxvaeFp1NSrWZwgby-7AfoXeimbzeKc3Jipinsje1ney3Bw3Abr_w9o55ILQ/exec?searchTerm=' + encodeURIComponent(term);
-
-  fetch(url, { mode: 'cors' }) // ตั้งค่า mode เป็น 'cors'
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then(data => {
-      displayResults(data.results); // ตรวจสอบว่า `data.results` เป็นข้อมูลที่คุณต้องการ
-    })
-    .catch(error => console.error('Error:', error));
+  
+  fetch(`https://script.google.com/macros/s/AKfycbyXTFfxaMgmlrTWSORLIgytExLZI0WBvp4VpXKHV0jqj0_huRziX5oUst814dP6KqK74g/exec?searchTerm=${term}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(response => response.json())
+  .then(data => {
+    displayResults(data.results); // แสดงผลลัพธ์ในตาราง
+    closeModal(); // ปิด pop-up เมื่อการค้นหาสำเร็จ
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    closeModal(); // ปิด pop-up หากเกิดข้อผิดพลาด
+  });
 }
 
 
+
+        function displayResults(results) {
+            var tableBody = document.getElementById("tableBody");
+            tableBody.innerHTML = ""; // ลบข้อมูลเดิมในตาราง
+
+            results.forEach(rowData => {
+                var row = "<tr>";
+                rowData.forEach(cell => {
+                    row += "<td>" + (cell || '') + "</td>"; // ใช้ (cell || '') เพื่อหลีกเลี่ยงการแสดงค่าที่เป็น undefined หรือ null
+                });
+                row += "</tr>";
+                tableBody.innerHTML += row;
+            });
+        }
     </script>
 </body>
 </html>
