@@ -128,12 +128,17 @@
     <script>
         function search() {
   var term = document.getElementById("searchTerm").value;
-  var url = 'https://script.google.com/macros/s/AKfycbzhnYwsd-5Otbl4UVRU6pcLCa6w4WzuxZpAvBT8Fxdw46f1w3llY1jzarVbife4SOProg/exec?searchTerm=' + encodeURIComponent(term);
+  var url = 'https://script.google.com/macros/s/AKfycbxUsXrZ-FfxvaeFp1NSrWZwgby-7AfoXeimbzeKc3Jipinsje1ney3Bw3Abr_w9o55ILQ/exec?searchTerm=' + encodeURIComponent(term);
 
-  fetch(url, { mode: 'no-cors' })
+  fetch(url)
     .then(response => {
-      // ข้ามการประมวลผลข้อมูลที่ไม่สามารถเข้าถึงได้
-      console.log('Request sent, but no response data available.');
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      displayResults(data); // แสดงผลข้อมูลที่ได้รับ
     })
     .catch(error => console.error('Error:', error));
 }
