@@ -10,38 +10,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        .iframe-container {
-            position: relative;
-            width: 90%;
-            height: 90vh;
-            padding-bottom: 75%;
-            overflow: hidden;
+        .container {
+            padding: 20px;
         }
-
-        .iframe-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
+        .table-container {
+            margin-top: 20px;
         }
-
-        .content-container {
-            margin: 20px;
-        }
-
         .social-icons {
             font-size: 24px;
             margin: 10px 0;
         }
-
         .social-icons a {
             color: #ffffff;
             margin: 0 10px;
             text-decoration: none;
         }
-
         .social-icons a:hover {
             color: #FA4616;
         }
@@ -49,19 +32,15 @@
             background-color: #0056b3;
             padding: 1rem;
         }
-
         .navbar-custom .navbar-brand, .navbar-custom .nav-link {
             color: #fff;
         }
-
         .navbar-custom .nav-link:hover {
             color: #f8f9fa;
         }
-
         .footer {
             background-color: #343a40;
         }
-
         .footer p {
             margin: 0;
         }
@@ -90,7 +69,7 @@
             </ul>
         </div>
     </nav>
-    
+
     <header class="hero-section text-center">
         <div class="container">
             <h1>รายชื่อ</h1>
@@ -98,9 +77,31 @@
         </div>
     </header>
 
-    <div class="content-container">
-        <div class="iframe-container">
-            <iframe src="https://script.google.com/macros/s/AKfycbzhnYwsd-5Otbl4UVRU6pcLCa6w4WzuxZpAvBT8Fxdw46f1w3llY1jzarVbife4SOProg/exec"></iframe>
+    <div class="container">
+        <div class="input-group mb-3">
+            <input type="text" id="searchTerm" class="form-control" placeholder="Enter keyword" aria-label="Enter keyword">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button" onclick="search()">Search</button>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>ชั้น</th>
+                        <th>เลขประจำตัวนักเรียน</th>
+                        <th>ชื่อ-นามสกุล</th>
+                        <th>SIZE</th>
+                        <th>Email</th>
+                        <th>ประเภทเสื้อ</th>
+                        <th>Payment</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- ข้อมูลจะถูกเติมที่นี่ -->
+                </tbody>
+            </table>
         </div>
     </div>
 
@@ -118,10 +119,34 @@
             <a href="mailto:sriwichaihkp@gmail.com" title="Email">
                 <i class="fas fa-envelope"></i>
             </a>
+        </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function search() {
+            var term = document.getElementById("searchTerm").value;
+            var url = 'https://script.google.com/macros/s/AKfycbzhnYwsd-5Otbl4UVRU6pcLCa6w4WzuxZpAvBT8Fxdw46f1w3llY1jzarVbife4SOProg/exec' + encodeURIComponent(term);
+            
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    var tableBody = document.getElementById("tableBody");
+                    tableBody.innerHTML = ""; // Clear existing table data
+                    data.forEach(row => {
+                        var tr = document.createElement("tr");
+                        row.forEach(cell => {
+                            var td = document.createElement("td");
+                            td.textContent = cell;
+                            tr.appendChild(td);
+                        });
+                        tableBody.appendChild(tr);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
 </body>
 </html>
