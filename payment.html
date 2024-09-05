@@ -130,7 +130,7 @@
   var term = document.getElementById("searchTerm").value;
   var url = 'https://script.google.com/macros/s/AKfycbxUsXrZ-FfxvaeFp1NSrWZwgby-7AfoXeimbzeKc3Jipinsje1ney3Bw3Abr_w9o55ILQ/exec?searchTerm=' + encodeURIComponent(term);
 
-  fetch(url)
+  fetch(url, { mode: 'cors' }) // ตั้งค่า mode เป็น 'cors'
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -138,10 +138,11 @@
       return response.json();
     })
     .then(data => {
-      displayResults(data); // แสดงผลข้อมูลที่ได้รับ
+      displayResults(data.results); // ตรวจสอบว่า `data.results` เป็นข้อมูลที่คุณต้องการ
     })
     .catch(error => console.error('Error:', error));
 }
+
 
     </script>
 </body>
