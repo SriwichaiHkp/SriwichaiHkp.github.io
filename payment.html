@@ -12,44 +12,26 @@
     <style>
         .content-container {
             display: flex;
-            justify-content: center; /* Center align the content */
+            justify-content: center;
             padding: 20px;
         }
+        .search-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
         .vertical-table {
+            width: 100%;
+        }
+        .vertical-table div {
             display: flex;
             flex-direction: column;
-        }
-        .vertical-table table {
-            width: 100%; /* Full width for table */
-        }
-        .vertical-table th, .vertical-table td {
-            text-align: left;
+            margin-bottom: 10px;
             border: 1px solid #ddd;
-            padding: 8px;
+            padding: 10px;
         }
-        .vertical-table thead {
-            display: flex;
-            flex-direction: column;
-        }
-        .vertical-table thead th {
-            background-color: #f2f2f2;
-            position: sticky;
-            top: 0;
-        }
-        .vertical-table tbody {
-            display: flex;
-            flex-direction: column;
-        }
-        .vertical-table tbody tr {
-            display: flex;
-            flex-direction: column;
-            border-bottom: 1px solid #ddd;
-        }
-        .vertical-table tbody tr td {
-            border-right: 1px solid #ddd;
-        }
-        .vertical-table tbody tr td:last-child {
-            border-right: none;
+        .vertical-table div h4 {
+            margin: 0;
+            font-weight: bold;
         }
         .hero-section {
             background: #275c92;
@@ -118,26 +100,12 @@
     </header>
 
     <div class="content-container">
-        <div class="vertical-table">
-            <h2 class="text-center">ค้นหาข้อมูล</h2>
-            <input type="text" id="searchTerm" placeholder="กรอกคำค้นหา" class="form-control mb-3">
+        <div class="search-container">
+            <input type="text" id="searchTerm" placeholder="กรอกเลขประจำตัวนักเรียน" class="form-control mb-3">
             <button onclick="search()" class="btn btn-primary btn-block">ค้นหา</button>
-            <table class="table table-bordered mt-3">
-                <thead>
-                    <tr>
-                        <th>ชั้น</th>
-                        <th>เลขประจำตัวนักเรียน</th>
-                        <th>ชื่อ-นามสกุล</th>
-                        <th>SIZE</th>
-                        <th>Email</th>
-                        <th>ประเภทเสื้อ</th>
-                        <th>Payment</th>
-                    </tr>
-                </thead>
-                <tbody id="tableBody">
-                    <!-- ข้อมูลจะถูกเติมที่นี่ -->
-                </tbody>
-            </table>
+        </div>
+        <div class="vertical-table" id="infoTable">
+            <!-- ข้อมูลจะแสดงที่นี่ -->
         </div>
     </div>
 
@@ -172,9 +140,9 @@
     <script>
         function search() {
             openModal(); // เปิด pop-up รอสักครู่
-            var term = document.getElementById("searchTerm").value;
+            var term = document.getElementById("searchTerm").value.trim(); // แปลงคำค้นหาเป็นตัวพิมพ์เล็ก
 
-            fetch(`https://script.google.com/macros/s/AKfycbz37JRFGEE6rSpzAY5teBEV1qMokHHVjTWyK7KGj9qzlo6ZjJnJUCtW9_SQK66zr67GGw/exec?search=${encodeURIComponent(term)}`, {
+            fetch(`https://api.sheety.co/a9bfcf76740dd2f775fce802af6f41a8/sriwichai/data`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
@@ -182,7 +150,8 @@
             })
             .then(response => response.json())
             .then(data => {
-                displayResults(data); // แสดงผลลัพธ์ในตาราง
+                // ลบการแสดงข้อมูลทั้งหมดใน console
+                displayResults(data, term); // แสดงผลลัพธ์ในตาราง
                 closeModal(); // ปิด pop-up เมื่อการค้นหาสำเร็จ
             })
             .catch(error => {
@@ -191,18 +160,27 @@
             });
         }
 
-        function displayResults(results) {
-            var tableBody = document.getElementById("tableBody");
-            tableBody.innerHTML = ""; // ลบข้อมูลเดิมในตาราง
+        function displayResults(data, term) {
+            var infoTable = document.getElementById("infoTable");
+            infoTable.innerHTML = ""; // ลบข้อมูลเดิมในตาราง
 
-            results.forEach(rowData => {
-                var row = "<tr>";
-                rowData.forEach(cell => {
-                    row += "<td>" + (cell || '') + "</td>"; // ใช้ (cell || '') เพื่อหลีกเลี่ยงการแสดงค่าที่เป็น undefined หรือ null
-                });
-                row += "</tr>";
-                tableBody.innerHTML += row;
-            });
+            var results = data.data; // ปรับนี้ตามโครงสร้างของ API
+            var found = results.find(item => item["เลขประจำตัวนักเรียน"] == term);
+
+            if (found) {
+                var infoHtml = `
+                    <div><h4>ชั้น</h4><p>${found["ชั้น"] || ''}</p></div>
+                    <div><h4>เลขประจำตัวนักเรียน</h4><p>${found["เลขประจำตัวนักเรียน"] || ''}</p></div>
+                    <div><h4>ชื่อ-นามสกุล</h4><p>${found["ชื่อ-นามสกุล"] || ''}</p></div>
+                    <div><h4>SIZE</h4><p>${found["size"] || ''}</p></div>
+                    <div><h4>Email</h4><p>${found["email"] || ''}</p></div>
+                    <div><h4>ประเภทเสื้อ</h4><p>${found["ประเภทเสื้อ"] || ''}</p></div>
+                    <div><h4>Payment</h4><p>${found["payment"] || ''}</p></div>
+                `;
+                infoTable.innerHTML = infoHtml;
+            } else {
+                infoTable.innerHTML = "<p>ไม่พบข้อมูลที่ค้นหา</p>";
+            }
         }
 
         function openModal() {
