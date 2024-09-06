@@ -10,7 +10,80 @@
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* CSS ของคุณที่ปรับใช้ */
+        .content-container {
+            display: flex;
+            justify-content: center; /* Center align the content */
+            padding: 20px;
+        }
+        .vertical-table {
+            display: flex;
+            flex-direction: column;
+        }
+        .vertical-table table {
+            width: 100%; /* Full width for table */
+        }
+        .vertical-table th, .vertical-table td {
+            text-align: left;
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        .vertical-table thead {
+            display: flex;
+            flex-direction: column;
+        }
+        .vertical-table thead th {
+            background-color: #f2f2f2;
+            position: sticky;
+            top: 0;
+        }
+        .vertical-table tbody {
+            display: flex;
+            flex-direction: column;
+        }
+        .vertical-table tbody tr {
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid #ddd;
+        }
+        .vertical-table tbody tr td {
+            border-right: 1px solid #ddd;
+        }
+        .vertical-table tbody tr td:last-child {
+            border-right: none;
+        }
+        .hero-section {
+            background: #275c92;
+            padding: 40px 0;
+            margin-bottom: 20px;
+        }
+        .footer {
+            margin-top: 20px;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            font-size: 24px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background-color: #fff;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+        }
     </style>
 </head>
 <body>
@@ -45,28 +118,26 @@
     </header>
 
     <div class="content-container">
-        <div class="container">
+        <div class="vertical-table">
             <h2 class="text-center">ค้นหาข้อมูล</h2>
             <input type="text" id="searchTerm" placeholder="กรอกคำค้นหา" class="form-control mb-3">
             <button onclick="search()" class="btn btn-primary btn-block">ค้นหา</button>
-            <div id="table-container">
-                <table class="table table-bordered mt-3">
-                    <thead>
-                        <tr>
-                            <th>ชั้น</th>
-                            <th>เลขประจำตัวนักเรียน</th>
-                            <th>ชื่อ-นามสกุล</th>
-                            <th>SIZE</th>
-                            <th>Email</th>
-                            <th>ประเภทเสื้อ</th>
-                            <th>Payment</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tableBody">
-                        <!-- ข้อมูลจะถูกเติมที่นี่ -->
-                    </tbody>
-                </table>
-            </div>
+            <table class="table table-bordered mt-3">
+                <thead>
+                    <tr>
+                        <th>ชั้น</th>
+                        <th>เลขประจำตัวนักเรียน</th>
+                        <th>ชื่อ-นามสกุล</th>
+                        <th>SIZE</th>
+                        <th>Email</th>
+                        <th>ประเภทเสื้อ</th>
+                        <th>Payment</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- ข้อมูลจะถูกเติมที่นี่ -->
+                </tbody>
+            </table>
         </div>
     </div>
 
@@ -87,33 +158,38 @@
         </div>
     </footer>
 
+    <!-- Modal for loading status -->
+    <div id="loadingModal" class="modal">
+        <div class="modal-content">
+            <p>กำลังโหลด...</p>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
         function search() {
-  openModal(); // เปิด pop-up รอสักครู่
-  var term = document.getElementById("searchTerm").value;
-  
-  fetch(`https://script.google.com/macros/s/AKfycbyXTFfxaMgmlrTWSORLIgytExLZI0WBvp4VpXKHV0jqj0_huRziX5oUst814dP6KqK74g/exec?searchTerm=${term}`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
-  .then(response => response.json())
-  .then(data => {
-    displayResults(data.results); // แสดงผลลัพธ์ในตาราง
-    closeModal(); // ปิด pop-up เมื่อการค้นหาสำเร็จ
-  })
-  .catch(error => {
-    console.error('Error:', error);
-    closeModal(); // ปิด pop-up หากเกิดข้อผิดพลาด
-  });
-}
+            openModal(); // เปิด pop-up รอสักครู่
+            var term = document.getElementById("searchTerm").value;
 
-
+            fetch(`https://script.google.com/macros/s/AKfycbz37JRFGEE6rSpzAY5teBEV1qMokHHVjTWyK7KGj9qzlo6ZjJnJUCtW9_SQK66zr67GGw/exec?search=${encodeURIComponent(term)}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                displayResults(data); // แสดงผลลัพธ์ในตาราง
+                closeModal(); // ปิด pop-up เมื่อการค้นหาสำเร็จ
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                closeModal(); // ปิด pop-up หากเกิดข้อผิดพลาด
+            });
+        }
 
         function displayResults(results) {
             var tableBody = document.getElementById("tableBody");
@@ -127,6 +203,14 @@
                 row += "</tr>";
                 tableBody.innerHTML += row;
             });
+        }
+
+        function openModal() {
+            document.getElementById("loadingModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("loadingModal").style.display = "none";
         }
     </script>
 </body>
